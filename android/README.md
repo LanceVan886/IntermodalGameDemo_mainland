@@ -1,3 +1,38 @@
+创发游戏安卓sdk接入文档，版本1.3.0。
+
+## 一、开发环境要求
+在开始运行工程之前，请您准备以下开发环境：
+
+- Android SDK API 等级 21 或以上。
+- Android 系统 5.0 或以上版本的移动设备。
+
+
+## 二、导入SDK到项目中
+
+**1.导入SDK**
+- 克隆或者直接下载[Demo仓库源码](https://github.com/CFGameTech/IntermodalGameDemo)
+- 找到 `Android/app/libs/cfgamelib.aar` 文件；
+- 将该aar文件拷贝到工程的app/libs目录下；
+- 在 app/build.gradle 中，添加引用 aar 包的代码:
+```java
+dependencies {
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+}
+```
+**2.配置App权限**
+在 AndroidManifest.xml 中配置 App 的权限，LUKSDK 需要以下权限：
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+**3.设置混淆规则**
+在 proguard-rules.pro 文件，将 LUKSDK 相关类加入不混淆名单：
+```
+-keep class com.cftech.** { *; }
+```
+
+## 三、接入指引
+
 ### 1. 初始化SDK（必接）
 初始化接口建议在`Application.onCreate()`中进行调用。
 > 说明：初始化接口并不会发起网络请求或申请权限，无需担心合规问题。
@@ -19,7 +54,7 @@ public static void initSDK(Application application, int appId, String language)
 | :---           | :---            | :---          |  :---         |
 | application    | 安卓Application  | 无  |  Application     |
 | appId          | 渠道ID           | 渠道号，您可向LUKSDK对接人员获取该ID     |    数字     |
-| language       | 游戏语言         | 游戏内语言类型，参照[多语言列表](https://wiki.luk.live/zh/language_list)  |  字符串     |
+| language       | 游戏语言         | 游戏内语言类型，您可向LUKSDK对接人员获取期望语种对应的值  |  字符串     |
 
 
 **3）调用参考**
@@ -74,7 +109,7 @@ public void refreshUserInfo()
 CFGameSDK.refreshUserInfo();
 ```
 
-### 4. 设置LUKSDK业务回调接口（必接）
+### 4. 设置CFGame业务回调接口（必接）
 该接口用于为游戏提供游戏所需的必要数据，进入游戏时LUKSDK会回调相关接口获取数据。
 
 **1）接口说明**
@@ -341,3 +376,38 @@ public static void releaseSDK()
 ```java
 CFGameSDK.releaseSDK();
 ``` 
+
+
+## 四、加载游戏的方式
+### 方案一：傻瓜式托管方案
+接入方可直接调用[拉起游戏列表弹窗](#起游戏列表弹窗)接口，拉起SDK内部的游戏列表弹窗，然后用户点击游戏自动进入相应的全屏游戏或半屏游戏。
+| 游戏列表弹窗 | 进入全屏游戏 | 进入半屏游戏 |
+|------------|------------|------------|
+| <img src="/domino_full.jpg" width="250"> | <img src="/domino_full.jpg" width="250"/> |<img src="/domino_half.jpg" width="250"/>
+
+
+
+### 方案二：自定义游戏列表方案
+1. 接入方调用[获取游戏列表]()接口拿到游戏列表后，自定义游戏列表展示逻辑
+2. 用户点击游戏后，调用[加载半屏游戏]()或[加载全屏游戏]()拉起游戏
+> [加载半屏游戏]()和[加载全屏游戏]()会将游戏视图加载到最上层
+{.is-warning}
+
+
+
+### 方案三：完全自定义方案
+1. 接入方调用[获取游戏列表]()接口拿到游戏列表后，自定义游戏列表展示逻辑
+2. 接入方将SDK内提供的`CFGWebView.java`添加到自己的视图内，并调用其`loadGame`接口
+```java
+cfgWebView.loadGame(gameId, gameUrl);
+```
+
+
+
+## 五、常见问题
+### 1. Flutter项目可以接入吗
+可以，参考[Flutter相关文档](https://docs.flutter.cn/platform-integration/android/platform-views)
+
+
+
+
