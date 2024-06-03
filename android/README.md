@@ -1,10 +1,10 @@
 创发游戏安卓sdk接入文档，版本1.3.0。
 
 ## 一、开发环境要求
-在开始运行工程之前，请您准备以下开发环境：
+LUKSDK编译配置如下：
 
-- Android SDK API 等级 21 或以上。
-- Android 系统 5.0 或以上版本的移动设备。
+- minSdk 21
+- targetSdk 26
 
 
 ## 二、导入SDK到项目中
@@ -16,8 +16,8 @@
 - 在 app/build.gradle 中，添加引用 aar 包的代码:
 ```java
 dependencies {
-    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-}
+        api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+        }
 ```
 **2.配置App权限**
 在 AndroidManifest.xml 中配置 App 的权限，LUKSDK 需要以下权限：
@@ -44,18 +44,19 @@ dependencies {
  * application: Application
  * appId: LUKSDK提供的appId
  * language: 游戏内使用的语言
+ * product：正式环境游戏true  测试环境游戏false
  */
-public static void initSDK(Application application, int appId, String language)
+public static void initSDK(Application application, int appId, String language, boolean product)
 ```  
 
 **2）参数说明**
 
-| 参数名称        | 字段含义          | 补充说明       | 数据类型     |
-| :---           | :---            | :---          |  :---         |
-| application    | 安卓Application  | 无  |  Application     |
-| appId          | 渠道ID           | 渠道号，您可向LUKSDK对接人员获取该ID     |    数字     |
-| language       | 游戏语言         | 游戏内语言类型，您可向LUKSDK对接人员获取期望语种对应的值  |  字符串     |
-
+| 参数名称        | 字段含义          | 补充说明                                  | 数据类型           |
+| :---           | :---            | :---                                     |  :---             |
+| application    | 安卓Application  | 无                                       |  Application      |
+| appId          | 渠道ID           | 渠道号，您可向LUKSDK对接人员获取该ID         |    数字            |
+| language       | 游戏语言         | 游戏内语言类型，参照[多语言列表](https://wiki.luk.live/zh/language_list)  |  字符串     |
+| product        | 游戏环境         | 正式环境游戏填true  测试环境游戏填false       |    boolean        |
 
 **3）调用参考**
 ```

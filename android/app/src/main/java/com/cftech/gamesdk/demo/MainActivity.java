@@ -2,11 +2,16 @@ package com.cftech.gamesdk.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.cftech.gamelibrary.CFGameSDK;
+import com.cftech.gamelibrary.utils.CFDensityUtil;
+import com.cftech.gamelibrary.utils.CFFP;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,10 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setUpSDK();
+
+
         findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CFGameSDK.initSDK(getApplication(), 1,  "", false);
+                CFGameSDK.setUserInfo("123456", "");
             }
         });
 
@@ -29,11 +37,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btnEnterFullGame).setOnClickListener(new View.OnClickListener() {
+    }
+
+    private void setUpSDK() {
+
+        CFGameSDK.setBizCallback(new CFGameSDK.ICFBizCallback() {
             @Override
-            public void onClick(View view) {
-                String userId = ((EditText)findViewById(R.id.etGameId)).getText().toString();
-                CFGameSDK.setUserInfo(userId, "");
+            public void onOpenChargePage() {
+                Log.i("MainActivity", "open charge page.");
+                Toast.makeText(MainActivity.this, "拉起充值", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public String onGetCurrentRoomId() {
+                Log.i("MainActivity", "get current room id.");
+                return "200016";
+            }
+
+            @Override
+            public boolean onIsRoomOwner() {
+                return true;
+            }
+
+            @Override
+            public Rect onWindowSafeArea() {
+                return new Rect(0, CFDensityUtil.dp2px(MainActivity.this, 200), 0, CFDensityUtil.dp2px(MainActivity.this, 280));
             }
         });
     }
