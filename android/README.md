@@ -1,4 +1,4 @@
-创发游戏安卓sdk接入文档，版本1.3.0。
+创发游戏安卓sdk接入文档，版本1.3.2。
 
 ## 一、开发环境要求
 LUKSDK编译配置如下：
@@ -16,8 +16,8 @@ LUKSDK编译配置如下：
 - 在 app/build.gradle 中，添加引用 aar 包的代码:
 ```java
 dependencies {
-        api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-        }
+    api fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+}
 ```
 **2.配置App权限**
 在 AndroidManifest.xml 中配置 App 的权限，LUKSDK 需要以下权限：
@@ -335,27 +335,27 @@ public interface ICFLogger {
 **3）调用参考**
 
 ```java
- CFGameSDK.setLogger(new CFGameSDK.ICFLogger() {
-        @Override
-        public void onDebug(String tag, String msg) {
+CFGameSDK.setLogger(new CFGameSDK.ICFLogger() {
+@Override
+public void onDebug(String tag, String msg) {
 
         }
 
-        @Override
-        public void onInfo(String tag, String msg) {
+@Override
+public void onInfo(String tag, String msg) {
 
         }
 
-        @Override
-        public void onWarn(String tag, String msg) {
+@Override
+public void onWarn(String tag, String msg) {
 
         }
 
-        @Override
-        public void onError(String tag, String msg) {
+@Override
+public void onError(String tag, String msg) {
 
         }
-});
+        });
 ``` 
 
 
