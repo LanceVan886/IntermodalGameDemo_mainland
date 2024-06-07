@@ -1,0 +1,18 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'CFGameSDK_Demo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'AFNetworking'
+  pod 'SVProgressHUD'
+  pod 'Masonry'
+  pod 'MJRefresh'
+  pod 'MJExtension'
+  pod 'SDWebImage'
+  pod 'SSZipArchive','~>2.1.4'
+
+  # Pods for CFGameSDK_Demo
+
+end
