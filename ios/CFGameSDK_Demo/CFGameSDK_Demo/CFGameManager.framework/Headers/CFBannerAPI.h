@@ -6,10 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZKWebView.h"
-#import "ZKArgList.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@class ZKWebView;
+@class ZKArgList;
 
 @interface CFBannerAPI : NSObject
 

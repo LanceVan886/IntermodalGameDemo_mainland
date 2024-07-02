@@ -41,6 +41,7 @@ FOUNDATION_EXPORT const unsigned char kerkeeVersionString[];
 #import "ZKClassParser.h"
 #import "ZKMethod.h"
 #import "ZKJSObject.h"
+#import "hybrid.h"
 
 #pragma mark - uri
 #import "ZKURI.h"

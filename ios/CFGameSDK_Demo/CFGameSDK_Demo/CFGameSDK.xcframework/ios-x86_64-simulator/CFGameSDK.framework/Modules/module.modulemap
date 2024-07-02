@@ -1,6 +1,0 @@
-framework module CFGameSDK {
-  umbrella header "CFGameSDK.h"
-  export *
-
-  module * { export * }
-}

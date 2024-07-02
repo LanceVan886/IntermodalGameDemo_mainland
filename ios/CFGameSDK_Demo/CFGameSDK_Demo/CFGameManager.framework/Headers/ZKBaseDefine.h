@@ -63,13 +63,16 @@
 // ----------------------------------
 // Global compile option
 // ----------------------------------
-//#define __ZK_MODLE_DEV__                (__OFF__)
-//#define __ZK_MODLE_TEST__                (__OFF__)
-//
-//#define __ZK_LOG__                        (__ON__)
-//#define __ZK_LOG__Brief__               (__OFF__)
-//#define __ZK_LOG__FILE__                (__OFF__)
-//
+#define __ZK_MODLE_DEV__                (__OFF__)
+#define __ZK_MODLE_TEST__                (__OFF__)
+
+#define __ZK_LOG__                        (__ON__)
+#define __ZK_LOG__Brief__               (__OFF__)
+#define __ZK_LOG__FILE__                (__OFF__)
+
+#define __KC_LOG__                        (__ON__)
+
+
 //#pragma mark -
 //#if defined(__ZK_LOG__) && __ZK_LOG__
 //#undef    // DYLogInfo

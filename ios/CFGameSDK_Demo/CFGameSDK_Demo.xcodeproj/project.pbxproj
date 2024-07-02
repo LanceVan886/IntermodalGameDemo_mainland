@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3631D9B42C1194DE00A2F31B /* CFGameManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3631D9B32C1194DE00A2F31B /* CFGameManager.framework */; };
 		366154402C1066FF00B39751 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3661543F2C1066FF00B39751 /* AppDelegate.m */; };
 		366154432C1066FF00B39751 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154422C1066FF00B39751 /* SceneDelegate.m */; };
 		366154462C1066FF00B39751 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154452C1066FF00B39751 /* ViewController.m */; };
@@ -15,6 +14,14 @@
 		3661544B2C10670000B39751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3661544A2C10670000B39751 /* Assets.xcassets */; };
 		3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3661544C2C10670000B39751 /* LaunchScreen.storyboard */; };
 		366154512C10670000B39751 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154502C10670000B39751 /* main.m */; };
+		36684D1A2C3462E700E3FBBB /* CFGameManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3631D9B32C1194DE00A2F31B /* CFGameManager.framework */; };
+		36684D1B2C3462E700E3FBBB /* CFGameManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3631D9B32C1194DE00A2F31B /* CFGameManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36684D232C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D1D2C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png */; };
+		36684D242C34661300E3FBBB /* text_wanfazhongxin_en@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D1E2C34661300E3FBBB /* text_wanfazhongxin_en@2x.png */; };
+		36684D252C34661300E3FBBB /* game_default_ic.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D1F2C34661300E3FBBB /* game_default_ic.png */; };
+		36684D262C34661300E3FBBB /* game_list_btn_guanbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D202C34661300E3FBBB /* game_list_btn_guanbi@2x.png */; };
+		36684D272C34661300E3FBBB /* cf_game_channel.js in Resources */ = {isa = PBXBuildFile; fileRef = 36684D212C34661300E3FBBB /* cf_game_channel.js */; };
+		36684D282C34661300E3FBBB /* game_list_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D222C34661300E3FBBB /* game_list_bg@2x.png */; };
 		AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				36684D1B2C3462E700E3FBBB /* CFGameManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +53,12 @@
 		3661544D2C10670000B39751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3661544F2C10670000B39751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366154502C10670000B39751 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36684D1D2C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_wanfazhongxin_zh@2x.png"; sourceTree = "<group>"; };
+		36684D1E2C34661300E3FBBB /* text_wanfazhongxin_en@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_wanfazhongxin_en@2x.png"; sourceTree = "<group>"; };
+		36684D1F2C34661300E3FBBB /* game_default_ic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_default_ic.png; sourceTree = "<group>"; };
+		36684D202C34661300E3FBBB /* game_list_btn_guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game_list_btn_guanbi@2x.png"; sourceTree = "<group>"; };
+		36684D212C34661300E3FBBB /* cf_game_channel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cf_game_channel.js; sourceTree = "<group>"; };
+		36684D222C34661300E3FBBB /* game_list_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game_list_bg@2x.png"; sourceTree = "<group>"; };
 		41254E2BD683402E3D975C4F /* Pods-CFGameSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		B1EA32F470367D58A45B9DDD /* Pods-CFGameSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.debug.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AB1E4E2C106AE0006B456F /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFGameSDK.framework; path = CFGameSDK_Demo/CFGameSDK.framework; sourceTree = "<group>"; };
@@ -57,7 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */,
-				3631D9B42C1194DE00A2F31B /* CFGameManager.framework in Frameworks */,
+				36684D1A2C3462E700E3FBBB /* CFGameManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +105,7 @@
 				366154422C1066FF00B39751 /* SceneDelegate.m */,
 				366154442C1066FF00B39751 /* ViewController.h */,
 				366154452C1066FF00B39751 /* ViewController.m */,
+				36684D1C2C34661300E3FBBB /* resource */,
 				3631D9B32C1194DE00A2F31B /* CFGameManager.framework */,
 				366154472C1066FF00B39751 /* Main.storyboard */,
 				3661544A2C10670000B39751 /* Assets.xcassets */,
@@ -99,6 +114,19 @@
 				366154502C10670000B39751 /* main.m */,
 			);
 			path = CFGameSDK_Demo;
+			sourceTree = "<group>";
+		};
+		36684D1C2C34661300E3FBBB /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				36684D1D2C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png */,
+				36684D1E2C34661300E3FBBB /* text_wanfazhongxin_en@2x.png */,
+				36684D1F2C34661300E3FBBB /* game_default_ic.png */,
+				36684D202C34661300E3FBBB /* game_list_btn_guanbi@2x.png */,
+				36684D212C34661300E3FBBB /* cf_game_channel.js */,
+				36684D222C34661300E3FBBB /* game_list_bg@2x.png */,
+			);
+			path = resource;
 			sourceTree = "<group>";
 		};
 		B186B125F8C95F7DA391AB57 /* Frameworks */ = {
@@ -157,7 +185,7 @@
 				};
 			};
 			buildConfigurationList = 366154362C1066FF00B39751 /* Build configuration list for PBXProject "CFGameSDK_Demo" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -179,9 +207,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36684D232C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png in Resources */,
+				36684D242C34661300E3FBBB /* text_wanfazhongxin_en@2x.png in Resources */,
+				36684D282C34661300E3FBBB /* game_list_bg@2x.png in Resources */,
 				3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */,
+				36684D252C34661300E3FBBB /* game_default_ic.png in Resources */,
 				3661544B2C10670000B39751 /* Assets.xcassets in Resources */,
 				366154492C1066FF00B39751 /* Main.storyboard in Resources */,
+				36684D262C34661300E3FBBB /* game_list_btn_guanbi@2x.png in Resources */,
+				36684D272C34661300E3FBBB /* cf_game_channel.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,9 +419,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S8D2M8Z9HG;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,7 +441,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cf.CFGameSDK-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cftech.gamesdk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -423,9 +458,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = S8D2M8Z9HG;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cf.CFGameSDK-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cftech.gamesdk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

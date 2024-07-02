@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -2065,11 +2065,11 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -2588,6 +2588,40 @@
 			};
 			name = Release;
 		};
+		1678A3A2A7BE8415B82A9F6B136D189A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD375DAB9B4D6BBEFE6FBD1FD33572B6 /* MJExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJExtension";
+				IBSC_MODULE = MJExtension;
+				INFOPLIST_FILE = "Target Support Files/MJExtension/ResourceBundle-MJExtension-MJExtension-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MJExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1BCE3044F5A42E06840C98052F32A4FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41266678EA74011CD1828CBB1BEAAF83 /* MJRefresh.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJRefresh";
+				IBSC_MODULE = MJRefresh;
+				INFOPLIST_FILE = "Target Support Files/MJRefresh/ResourceBundle-MJRefresh.Privacy-MJRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MJRefresh.Privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		2A23681BDB3D92862359E4A85C4554BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1FB9CCCB1DEFD787835BB964D2EF8E95 /* SVProgressHUD.release.xcconfig */;
@@ -2620,38 +2654,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		35C4CDB39B4C3974472F566AE5112B8F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41266678EA74011CD1828CBB1BEAAF83 /* MJRefresh.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJRefresh";
-				IBSC_MODULE = MJRefresh;
-				INFOPLIST_FILE = "Target Support Files/MJRefresh/ResourceBundle-MJRefresh.Privacy-MJRefresh-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MJRefresh.Privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		4DDC1A45791820536B8EC04EB5207C19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD375DAB9B4D6BBEFE6FBD1FD33572B6 /* MJExtension.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJExtension";
-				IBSC_MODULE = MJExtension;
-				INFOPLIST_FILE = "Target Support Files/MJExtension/ResourceBundle-MJExtension-MJExtension-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MJExtension;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -2933,22 +2935,6 @@
 			};
 			name = Release;
 		};
-		80FC1252C47BD07BF91CCC8F676ECE41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76EFADA6E6639A41BB7A2561268C3267 /* MJRefresh.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJRefresh";
-				IBSC_MODULE = MJRefresh;
-				INFOPLIST_FILE = "Target Support Files/MJRefresh/ResourceBundle-MJRefresh.Privacy-MJRefresh-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MJRefresh.Privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		83A1CD5A0D744E6C5C16EB552F459A6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A2C05469404D31635F1EF090B49F244 /* Masonry.release.xcconfig */;
@@ -2983,10 +2969,11 @@
 			};
 			name = Release;
 		};
-		88350348E816A2747003378196FF4F93 /* Debug */ = {
+		86F535B51A9A491631899610AF5889B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7348E235ECD7B5E68AD5C85C4FA886C /* MJExtension.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJExtension";
 				IBSC_MODULE = MJExtension;
 				INFOPLIST_FILE = "Target Support Files/MJExtension/ResourceBundle-MJExtension-MJExtension-Info.plist";
@@ -3161,22 +3148,6 @@
 			};
 			name = Debug;
 		};
-		B0ECAD0236220F399453D4F1A2E3689B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3170B47DAC2347991EB35472B3BE464 /* SDWebImage.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SDWebImage";
-				IBSC_MODULE = SDWebImage;
-				INFOPLIST_FILE = "Target Support Files/SDWebImage/ResourceBundle-SDWebImage-SDWebImage-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = SDWebImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		C13E4EF674953030103D27B198C42544 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD375DAB9B4D6BBEFE6FBD1FD33572B6 /* MJExtension.release.xcconfig */;
@@ -3209,6 +3180,23 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C7DC73873831ED9CF084FBD0D0A8A723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3170B47DAC2347991EB35472B3BE464 /* SDWebImage.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SDWebImage";
+				IBSC_MODULE = SDWebImage;
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/ResourceBundle-SDWebImage-SDWebImage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = SDWebImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -3245,10 +3233,11 @@
 			};
 			name = Debug;
 		};
-		E4A1419C41D6F60F49A1986971A7011F /* Debug */ = {
+		E973D688CEE9F6A2AF60B387F1B313F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E80203CCEE67AC26F568F3C592BE40C /* SDWebImage.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SDWebImage";
 				IBSC_MODULE = SDWebImage;
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/ResourceBundle-SDWebImage-SDWebImage-Info.plist";
@@ -3260,6 +3249,23 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
+		};
+		EE78930E4C4DDAB5C59D6A7921C28140 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76EFADA6E6639A41BB7A2561268C3267 /* MJRefresh.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MJRefresh";
+				IBSC_MODULE = MJRefresh;
+				INFOPLIST_FILE = "Target Support Files/MJRefresh/ResourceBundle-MJRefresh.Privacy-MJRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MJRefresh.Privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -3276,8 +3282,8 @@
 		2AB88581F35A95CC15E8B6F5D219EE27 /* Build configuration list for PBXNativeTarget "MJRefresh-MJRefresh.Privacy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				35C4CDB39B4C3974472F566AE5112B8F /* Debug */,
-				80FC1252C47BD07BF91CCC8F676ECE41 /* Release */,
+				1BCE3044F5A42E06840C98052F32A4FF /* Debug */,
+				EE78930E4C4DDAB5C59D6A7921C28140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3330,8 +3336,8 @@
 		89EDD57C76EA8280F409D668F9B5C623 /* Build configuration list for PBXNativeTarget "MJExtension-MJExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88350348E816A2747003378196FF4F93 /* Debug */,
-				4DDC1A45791820536B8EC04EB5207C19 /* Release */,
+				86F535B51A9A491631899610AF5889B9 /* Debug */,
+				1678A3A2A7BE8415B82A9F6B136D189A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3348,8 +3354,8 @@
 		BA43659BAE72E9B05FCB03E88EBDC7EE /* Build configuration list for PBXNativeTarget "SDWebImage-SDWebImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4A1419C41D6F60F49A1986971A7011F /* Debug */,
-				B0ECAD0236220F399453D4F1A2E3689B /* Release */,
+				E973D688CEE9F6A2AF60B387F1B313F6 /* Debug */,
+				C7DC73873831ED9CF084FBD0D0A8A723 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

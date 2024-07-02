@@ -9,8 +9,6 @@
 #define CommonHeader_h
 
 #import "CFCommonDefine.h"
-#import "hybrid.h"
-#import <MJExtension/MJExtension.h>
 #import "UIImage+CF.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #endif /* CommonHeader_h */

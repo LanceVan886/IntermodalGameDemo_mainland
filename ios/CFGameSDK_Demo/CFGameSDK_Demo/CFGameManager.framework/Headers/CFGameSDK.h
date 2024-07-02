@@ -8,7 +8,14 @@
 #import <Foundation/Foundation.h>
 #import "CFGameModel.h"
 #import "ZKLog.h"
-#import <UIKit/UIKit.h>
+
+typedef struct {
+    CGFloat top;
+    CGFloat left;
+    CGFloat bottom;
+    CGFloat right;
+    CGFloat minScaleLimit;
+} CFGameEdgeInsets;
 
 @class CFGameEngine;
 
@@ -38,7 +45,7 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
  *
  * Returns：游戏视图的安全区域，若无要求可返回null
  */
-- (UIEdgeInsets)onWindowSafeArea;
+- (CFGameEdgeInsets)onWindowSafeArea;
 
 @end
 

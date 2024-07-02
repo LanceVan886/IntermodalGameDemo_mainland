@@ -21,6 +21,13 @@
 
 
 @property (nonatomic,assign) BOOL isProduct;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *topPaddingTF;
+@property (weak, nonatomic) IBOutlet UITextField *leftPaddingTF;
+@property (weak, nonatomic) IBOutlet UITextField *bottomPaddingTF;
+@property (weak, nonatomic) IBOutlet UITextField *rightPaddingTF;
+@property (weak, nonatomic) IBOutlet UITextField *scalePaddingTF;
 @end
 
 @implementation ViewController
@@ -119,7 +126,7 @@
         [self.envBtn setTitle:@"测试环境" forState:UIControlStateNormal];
         
        }];
-    UIAlertAction *productAction = [UIAlertAction actionWithTitle:@"测试环境" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *productAction = [UIAlertAction actionWithTitle:@"生产环境" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         self.isProduct = TRUE;
         [self.envBtn setTitle:@"生产环境" forState:UIControlStateNormal];
@@ -141,8 +148,14 @@
     return [self.isOwnerTF.text isEqualToString:@"1"];
 }
 
-- (UIEdgeInsets)onWindowSafeArea {
-    return UIEdgeInsetsZero;
+- (CFGameEdgeInsets)onWindowSafeArea {
+    CFGameEdgeInsets insets;
+    insets.top = self.topPaddingTF.text.floatValue;
+    insets.left = self.leftPaddingTF.text.floatValue;
+    insets.bottom = self.bottomPaddingTF.text.floatValue;
+    insets.right = self.rightPaddingTF.text.floatValue;
+    insets.minScaleLimit = self.scalePaddingTF.text.floatValue;
+    return insets;
 }
 
 - (void)openChargePage {
