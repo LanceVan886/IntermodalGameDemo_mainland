@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public Rect onWindowSafeArea() {
-                return new Rect(0, CFDensityUtil.dp2px(MainActivity.this, 200), 0, CFDensityUtil.dp2px(MainActivity.this, 280));
+            public CFGameSDK.CFRect onWindowSafeArea() {
+                return new CFGameSDK.CFRect(0, CFDensityUtil.dp2px(MainActivity.this, 200), 0, CFDensityUtil.dp2px(MainActivity.this, 280), 0.6f);
             }
         });
     }
