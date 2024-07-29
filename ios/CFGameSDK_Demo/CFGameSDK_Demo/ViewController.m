@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import <CFGameManager/CFGameSDK.h>
+#import <CFGameManager/CFGameWebviewController.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *languageTF;

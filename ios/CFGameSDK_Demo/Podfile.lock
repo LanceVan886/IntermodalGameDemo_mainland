@@ -15,44 +15,34 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - Masonry (1.1.0)
-  - MJExtension (3.4.2)
-  - MJRefresh (3.7.9)
   - SDWebImage (5.19.2):
     - SDWebImage/Core (= 5.19.2)
   - SDWebImage/Core (5.19.2)
   - SSZipArchive (2.1.5)
-  - SVProgressHUD (2.3.1):
-    - SVProgressHUD/Core (= 2.3.1)
-  - SVProgressHUD/Core (2.3.1)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
   - Masonry
-  - MJExtension
-  - MJRefresh
   - SDWebImage
   - SSZipArchive (~> 2.1.4)
-  - SVProgressHUD
+  - YYModel
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - Masonry
-    - MJExtension
-    - MJRefresh
     - SDWebImage
     - SSZipArchive
-    - SVProgressHUD
+    - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
-  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
-  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5027ead287b07da7e8d46fec2fb0710069f1335b
+PODFILE CHECKSUM: 0c2bed117c14d0f35894fbadd0423fb4a77b23b6
 
 COCOAPODS: 1.15.2

@@ -6,10 +6,8 @@ target 'CFGameSDK_Demo' do
   use_frameworks!
 
   pod 'AFNetworking'
-  pod 'SVProgressHUD'
   pod 'Masonry'
-  pod 'MJRefresh'
-  pod 'MJExtension'
+  pod 'YYModel'
   pod 'SDWebImage'
   pod 'SSZipArchive','~>2.1.4'
 

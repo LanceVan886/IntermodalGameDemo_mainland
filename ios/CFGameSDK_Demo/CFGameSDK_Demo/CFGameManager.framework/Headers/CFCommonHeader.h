@@ -10,5 +10,5 @@
 
 #import "CFCommonDefine.h"
 #import "UIImage+CF.h"
-#import <SVProgressHUD/SVProgressHUD.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #endif /* CommonHeader_h */
