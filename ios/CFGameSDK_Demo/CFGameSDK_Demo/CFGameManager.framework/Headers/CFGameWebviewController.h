@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy, nonatomic) NSString *webUrl;
 
+@property (nonatomic,assign) int g_id;
+
 @property (assign,nonatomic) BOOL isHalfScreen;
 
 

@@ -26,7 +26,24 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CFGameSDK.setUserInfo("123456", "");
+                CFGameSDK.setUserInfo("123456", "", new CFGameSDK.ICFLoginCallback() {
+                    @Override
+                    public void onLoginSuccess() {
+                        Log.i("MainActivity", "onLoginSuccess.");
+                        Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onLoginFail(int code, String msg) {
+                        Log.e("MainActivity", "onLoginFail.");
+                        Toast.makeText(MainActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onRefreshToken(String token) {
+                        Log.i("MainActivity", "onRefreshToken：" + token);
+                    }
+                });
             }
         });
 

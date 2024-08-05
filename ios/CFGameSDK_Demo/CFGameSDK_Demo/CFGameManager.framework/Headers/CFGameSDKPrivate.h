@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak,readonly) id<CFGameSDKDelegate> delegate;
 
+@property (nonatomic,weak,readonly) id<CFGameSDKLoginDelegate> loginDelegate;
+
 @property (nonatomic,weak,readonly) ZKLogger *logger;
 
 @property (nonatomic,assign,readonly) BOOL isProduct;
@@ -24,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(UIApplication *)getApplication;
+
+-(void)startLoginTokenTimer:(int)remainTime;
 
 @end
 

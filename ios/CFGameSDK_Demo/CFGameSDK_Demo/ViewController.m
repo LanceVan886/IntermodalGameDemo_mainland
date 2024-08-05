@@ -52,7 +52,7 @@
         [self presentViewController:alertVc animated:TRUE completion:nil];
         return;
     }
-    [CFGameSDK setUserInfo:self.userIDTF.text code:@""];
+    [CFGameSDK setUserInfo:self.userIDTF.text code:@"" loginCallBack:self];
     
 }
 
@@ -161,6 +161,33 @@
 
 - (void)openChargePage {
     
+}
+
+
+/**
+ *
+ * 用户登录成功回调
+ */
+- (void)onLoginSuccess{
+    
+    NSLog(@"CFGameSDKLoginCallBack login success");
+}
+
+/**
+ *
+ * 用户登录失败回调
+ */
+- (void)onLoginFailCode:(int)code message:(NSString *)msg{
+    
+    
+    NSLog(@"CFGameSDKLoginCallBack login fail code = %d msg = %@",code,msg);
+}
+/**
+ *
+ * token 更新后回调，接入方通常无需关注此接口
+ */
+- (void)onRefreshToken:(NSString *)token{
+    NSLog(@"CFGameSDKLoginCallBack onRefreshToken success");
 }
 
 

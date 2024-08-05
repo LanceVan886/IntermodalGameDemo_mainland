@@ -21,6 +21,8 @@ typedef void(^NetWorkFailureBlk)(NSError *error);
 
 -(void)requestGetSDKTokenCompleteBlk:(NetWorkSuccessBlk)successBlock failBlk:(NetWorkFailureBlk)failBlk;
 
+-(void)requestRefreshUserTokenCompleteBlk:(NetWorkSuccessBlk)successBlock failBlk:(NetWorkFailureBlk)failBlk;
+
 -(void)requestCheckToEnterGameWithGameId:(NSInteger )gameId completeBlk:(NetWorkSuccessBlk)successBlock failBlk:(NetWorkFailureBlk)failBlk;
 
 @end

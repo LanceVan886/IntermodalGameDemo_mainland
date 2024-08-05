@@ -49,6 +49,29 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
 
 @end
 
+
+@protocol CFGameSDKLoginDelegate <NSObject>
+@required
+
+/**
+ *
+ * 用户登录成功回调
+ */
+- (void)onLoginSuccess;
+
+/**
+ *
+ * 用户登录失败回调
+ */
+- (void)onLoginFailCode:(int)code message:(NSString *)msg;
+/**
+ *
+ * token 更新后回调，接入方通常无需关注此接口
+ */
+- (void)onRefreshToken:(NSString *)token;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CFGameSDK : NSObject
@@ -66,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param userId : 接入方的用户id
  *  @param userCode : 接入方的用户code,用于创发向接入方校验用户的合法性
  */
-+(void)setUserInfo:(NSString *)userId code:(NSString *)userCode;
++(void)setUserInfo:(NSString *)userId code:(NSString *)userCode loginCallBack:(id<CFGameSDKLoginDelegate>)loginCallBack;
 
 /*
  *  拉起游戏列表弹窗

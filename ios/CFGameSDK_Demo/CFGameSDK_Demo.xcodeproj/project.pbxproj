@@ -16,12 +16,6 @@
 		366154512C10670000B39751 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154502C10670000B39751 /* main.m */; };
 		36684D1A2C3462E700E3FBBB /* CFGameManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3631D9B32C1194DE00A2F31B /* CFGameManager.framework */; };
 		36684D1B2C3462E700E3FBBB /* CFGameManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3631D9B32C1194DE00A2F31B /* CFGameManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		36684D232C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D1D2C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png */; };
-		36684D242C34661300E3FBBB /* text_wanfazhongxin_en@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D1E2C34661300E3FBBB /* text_wanfazhongxin_en@2x.png */; };
-		36684D252C34661300E3FBBB /* game_default_ic.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D1F2C34661300E3FBBB /* game_default_ic.png */; };
-		36684D262C34661300E3FBBB /* game_list_btn_guanbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D202C34661300E3FBBB /* game_list_btn_guanbi@2x.png */; };
-		36684D272C34661300E3FBBB /* cf_game_channel.js in Resources */ = {isa = PBXBuildFile; fileRef = 36684D212C34661300E3FBBB /* cf_game_channel.js */; };
-		36684D282C34661300E3FBBB /* game_list_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36684D222C34661300E3FBBB /* game_list_bg@2x.png */; };
 		AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +47,6 @@
 		3661544D2C10670000B39751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3661544F2C10670000B39751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366154502C10670000B39751 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		36684D1D2C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_wanfazhongxin_zh@2x.png"; sourceTree = "<group>"; };
-		36684D1E2C34661300E3FBBB /* text_wanfazhongxin_en@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text_wanfazhongxin_en@2x.png"; sourceTree = "<group>"; };
-		36684D1F2C34661300E3FBBB /* game_default_ic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_default_ic.png; sourceTree = "<group>"; };
-		36684D202C34661300E3FBBB /* game_list_btn_guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game_list_btn_guanbi@2x.png"; sourceTree = "<group>"; };
-		36684D212C34661300E3FBBB /* cf_game_channel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cf_game_channel.js; sourceTree = "<group>"; };
-		36684D222C34661300E3FBBB /* game_list_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game_list_bg@2x.png"; sourceTree = "<group>"; };
 		41254E2BD683402E3D975C4F /* Pods-CFGameSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		B1EA32F470367D58A45B9DDD /* Pods-CFGameSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.debug.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AB1E4E2C106AE0006B456F /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFGameSDK.framework; path = CFGameSDK_Demo/CFGameSDK.framework; sourceTree = "<group>"; };
@@ -105,7 +93,6 @@
 				366154422C1066FF00B39751 /* SceneDelegate.m */,
 				366154442C1066FF00B39751 /* ViewController.h */,
 				366154452C1066FF00B39751 /* ViewController.m */,
-				36684D1C2C34661300E3FBBB /* resource */,
 				3631D9B32C1194DE00A2F31B /* CFGameManager.framework */,
 				366154472C1066FF00B39751 /* Main.storyboard */,
 				3661544A2C10670000B39751 /* Assets.xcassets */,
@@ -114,19 +101,6 @@
 				366154502C10670000B39751 /* main.m */,
 			);
 			path = CFGameSDK_Demo;
-			sourceTree = "<group>";
-		};
-		36684D1C2C34661300E3FBBB /* resource */ = {
-			isa = PBXGroup;
-			children = (
-				36684D1D2C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png */,
-				36684D1E2C34661300E3FBBB /* text_wanfazhongxin_en@2x.png */,
-				36684D1F2C34661300E3FBBB /* game_default_ic.png */,
-				36684D202C34661300E3FBBB /* game_list_btn_guanbi@2x.png */,
-				36684D212C34661300E3FBBB /* cf_game_channel.js */,
-				36684D222C34661300E3FBBB /* game_list_bg@2x.png */,
-			);
-			path = resource;
 			sourceTree = "<group>";
 		};
 		B186B125F8C95F7DA391AB57 /* Frameworks */ = {
@@ -207,15 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36684D232C34661300E3FBBB /* text_wanfazhongxin_zh@2x.png in Resources */,
-				36684D242C34661300E3FBBB /* text_wanfazhongxin_en@2x.png in Resources */,
-				36684D282C34661300E3FBBB /* game_list_bg@2x.png in Resources */,
 				3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */,
-				36684D252C34661300E3FBBB /* game_default_ic.png in Resources */,
 				3661544B2C10670000B39751 /* Assets.xcassets in Resources */,
 				366154492C1066FF00B39751 /* Main.storyboard in Resources */,
-				36684D262C34661300E3FBBB /* game_list_btn_guanbi@2x.png in Resources */,
-				36684D272C34661300E3FBBB /* cf_game_channel.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
