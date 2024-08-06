@@ -44,6 +44,17 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)finishGameWindow;
 
 /*
+ *  terminate current game
+ */
+-(void)terminateGame;
+
+/*
+ *  joinGame with position
+ */
+-(void)joinGame:(int)position;
+
+
+/*
  *  refresh game userInfo
  */
 -(void)refreshUserInfo;

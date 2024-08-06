@@ -72,6 +72,67 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
 
 @end
 
+@protocol CFGameLifeCycleDelegate <NSObject>
+@required
+
+/**
+ *
+ * 游戏加载失败
+ */
+- (void)onGameLoadFail;
+
+
+/**
+ *
+ * 用户自动上麦加入游戏
+ */
+- (BOOL)onPreJoinGame:(NSString *)uid seatIndex:(int)seatIndex;
+
+/**
+ *
+ * 用户加入游戏
+ */
+- (void)onJoinGame:(NSString *)uid;
+
+/**
+ *
+ * 用户准备游戏
+ */
+- (void)onGamePrepare:(NSString *)uid;
+
+/**
+ *
+ * 用户取消准备
+ */
+- (void)onCancelPrepare:(NSString *)uid;
+
+
+/**
+ *
+ * 用户游戏终结
+ */
+- (void)onGameTerminated:(NSString *)uid;
+
+/**
+ *
+ * 游戏结束
+ */
+- (void)onGameOver;
+
+@end
+
+
+@protocol CFGameSDKRTCDelegate <NSObject>
+@required
+
+- (BOOL)onCFGamePushSelfRTC:(BOOL)push;
+
+- (BOOL)onCFGamePullOtherRTC:(NSString *)uid pull:(BOOL)pull;
+
+@end
+
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CFGameSDK : NSObject
@@ -121,6 +182,17 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)finishGameWindow;
 
 /*
+ *  释放当前游戏
+ */
++(void)terminateGame;
+
+/*
+ *  加入当前游戏
+ *  @param position : 位置
+ */
++(void)joinGame:(int)position;
+
+/*
  *  通过js通知游戏刷新用户资产信息
  */
 +(void)refreshUserInfo;
@@ -134,6 +206,18 @@ NS_ASSUME_NONNULL_BEGIN
  *  设置日志
  */
 +(void)setLogger:(ZKLogger *)logger;
+
+
+/*
+ *  设置CFGame LifeCycle回调
+ */
++(void)setCFGameLifecycleCallback:(id<CFGameLifeCycleDelegate>)callback;
+
+
+/*
+ *  设置RTC回调
+ */
++(void)setRTCCallback:(id<CFGameSDKRTCDelegate>)callback;
 
 +(CFGameEngine *)getEngine;
 

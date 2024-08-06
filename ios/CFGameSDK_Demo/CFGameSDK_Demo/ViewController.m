@@ -83,6 +83,10 @@
     [CFGameSDK setUpSDKWithApplication:UIApplication.sharedApplication appId:[self.channelTF.text integerValue] language:_languageTF.text isProduct:self.isProduct];
     
     [CFGameSDK setBizCallback:self];
+    
+    [CFGameSDK setCFGameLifecycleCallback:self];
+    [CFGameSDK setRTCCallback:self];
+    
     ZKLogger *logger = [[ZKLogger alloc] init];
     [CFGameSDK setLogger:logger];
 }
@@ -189,6 +193,76 @@
 - (void)onRefreshToken:(NSString *)token{
     NSLog(@"CFGameSDKLoginCallBack onRefreshToken success");
 }
+/**
+ *
+ * 游戏加载失败
+ */
+- (void)onGameLoadFail{
+    NSLog(@"CFViewController callback onGameLoadFail ");
 
+}
+
+
+/**
+ *
+ * 用户自动上麦加入游戏
+ */
+- (BOOL)onPreJoinGame:(NSString *)uid seatIndex:(int)seatIndex{
+    NSLog(@"CFViewController callback  onPreJoinGame uid = %@ , seatIndex = %d",uid,seatIndex);
+    return YES;
+}
+
+/**
+ *
+ * 用户加入游戏
+ */
+- (void)onJoinGame:(NSString *)uid{
+    NSLog(@"CFViewController callback  uid = %@, JoinGame ",uid);
+
+}
+
+/**
+ *
+ * 用户准备游戏
+ */
+- (void)onGamePrepare:(NSString *)uid{
+    NSLog(@"CFViewController callback uid = %@, gamePrepare ",uid);
+
+}
+
+/**
+ *
+ * 用户取消准备
+ */
+- (void)onCancelPrepare:(NSString *)uid{
+    NSLog(@"CFViewController callback uid = %@, CancelPrepare ",uid);
+
+}
+
+
+/**
+ *
+ * 用户游戏终结
+ */
+- (void)onGameTerminated:(NSString *)uid{
+    NSLog(@"CFViewController callback uid = %@, game terminated ",uid);
+}
+
+/**
+ *
+ * 游戏结束
+ */
+- (void)onGameOver{
+    NSLog(@"CFViewController callback game over ");
+}
+
+
+- (BOOL)onCFGamePushSelfRTC:(BOOL)push{
+    return YES;
+}
+
+- (BOOL)onCFGamePullOtherRTC:(NSString *)uid pull:(BOOL)pull{
+    return YES;
+}
 
 @end

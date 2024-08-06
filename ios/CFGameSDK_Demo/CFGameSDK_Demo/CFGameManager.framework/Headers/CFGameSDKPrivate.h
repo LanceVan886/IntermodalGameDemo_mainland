@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak,readonly) id<CFGameSDKLoginDelegate> loginDelegate;
 
+@property (nonatomic,weak,readonly) id<CFGameLifeCycleDelegate> gameLifecycleDelegate;
+
+
+@property (nonatomic,weak,readonly) id<CFGameSDKRTCDelegate> rtcDelegate;
+
 @property (nonatomic,weak,readonly) ZKLogger *logger;
 
 @property (nonatomic,assign,readonly) BOOL isProduct;

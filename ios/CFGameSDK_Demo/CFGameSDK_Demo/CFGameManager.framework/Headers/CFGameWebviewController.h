@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 刷新用户信息
 -(void)refreshUserInfo;
 
+-(void)terminateGame;
+
+-(void)joinGame:(int)position;
+
 @end
 
 NS_ASSUME_NONNULL_END

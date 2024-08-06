@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3653BE0E2C61FE1700224088 /* cf_game_channel.js in Resources */ = {isa = PBXBuildFile; fileRef = 3653BE0D2C61FE1700224088 /* cf_game_channel.js */; };
 		366154402C1066FF00B39751 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3661543F2C1066FF00B39751 /* AppDelegate.m */; };
 		366154432C1066FF00B39751 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154422C1066FF00B39751 /* SceneDelegate.m */; };
 		366154462C1066FF00B39751 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154452C1066FF00B39751 /* ViewController.m */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		3631D9B32C1194DE00A2F31B /* CFGameManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CFGameManager.framework; sourceTree = "<group>"; };
+		3653BE0D2C61FE1700224088 /* cf_game_channel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = cf_game_channel.js; sourceTree = "<group>"; };
 		3661543B2C1066FF00B39751 /* CFGameSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFGameSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3661543E2C1066FF00B39751 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3661543F2C1066FF00B39751 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				366154422C1066FF00B39751 /* SceneDelegate.m */,
 				366154442C1066FF00B39751 /* ViewController.h */,
 				366154452C1066FF00B39751 /* ViewController.m */,
+				3653BE0D2C61FE1700224088 /* cf_game_channel.js */,
 				3631D9B32C1194DE00A2F31B /* CFGameManager.framework */,
 				366154472C1066FF00B39751 /* Main.storyboard */,
 				3661544A2C10670000B39751 /* Assets.xcassets */,
@@ -184,6 +187,7 @@
 				3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */,
 				3661544B2C10670000B39751 /* Assets.xcassets in Resources */,
 				366154492C1066FF00B39751 /* Main.storyboard in Resources */,
+				3653BE0E2C61FE1700224088 /* cf_game_channel.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

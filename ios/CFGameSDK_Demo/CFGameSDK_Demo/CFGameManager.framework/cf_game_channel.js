@@ -4,17 +4,38 @@ var CFGameOpenApi = window.webkit.messageHandlers;
 var CFGameLife = window.webkit.messageHandlers;
 
 var cf_game={
-    User:{
-        getUserInfo: function (callback) {
-            console.log("getUserInfo()");
-            var invokeId = getInvokeId();
-            cfgCallJsBacks[invokeId] = callback;
-            CFGameUser.getUserInfo.postMessage(invokeId);
-        }
+    GameRTC:{
+            onCFGamePushSelfRTC: function (push, callback) {
+                console.log("gameLoadSuccess()");
+                var invokeId = getInvokeId();
+                cfgCallJsBacks[invokeId] = callback;
+                var message = {
+                    invokeId:invokeId,
+                    data:{
+                        push:push
+                    }
+                };
+                CFGameRTC.onCFGamePushSelfRTC.postMessage(message);
+            },
+            onCFGamePullOtherRTC: function (uid, pull, callback) {
+                console.log("gameLoadFail()");
+                var invokeId = getInvokeId();
+                cfgCallJsBacks[invokeId] = callback;
+                var message = {
+                    invokeId:invokeId,
+                    data:{
+                        uid:uid,
+                        pull:pull
+                    }
+                };
+                CFGameRTC.onCFGamePullOtherRTC.postMessage(message);
+            }
     },
     OpenApi:{
         getBaseInfo: function (callback) {
                     console.log("getBaseInfo()");
+                    console.log(window.webkit.messageHandlers);
+
                     var invokeId = getInvokeId();
                     cfgCallJsBacks[invokeId] = callback;
                     CFGameOpenApi.getBaseInfo.postMessage(invokeId);
@@ -30,7 +51,7 @@ var cf_game={
         openChargePage: function () {
             var invokeId = getInvokeId();
             console.log("openChargePage()");
-            CFGameOpenApi.openChargePage.postMessage(getInvokeId);
+            CFGameOpenApi.openChargePage.postMessage(invokeId);
         },
 
         closeGamePage: function () {
@@ -40,36 +61,45 @@ var cf_game={
         }
 
     },
-    GameLife:{
-        gameLoadFailed:function(){
-            console.log("gameLoadFailed()");
-            CFGameLife.gameLoadFailed.postMessage();
+    GameLife: {
+        gameLoadFail() {
+            console.log("gameLoadFail()");
+            CFGameLife.gameLoadFail();
         },
-        joinGame:function(userId){
+        preJoinGame(uid, seat, callback) {
+            console.log("preJoinGame()");
+            var invokeId = getInvokeId();
+            cfgCallJsBacks[invokeId] = callback;
+            var message = {
+                invokeId:invokeId,
+                data:{
+                    uid:uid,
+                    seat:seat
+                }
+            };
+            CFGameLife.preJoinGame.postMessage(message);
+        },
+        joinGame(uid) {
             console.log("joinGame()");
-            CFGameLife.joinGame.postMessage(userId);
+            CFGameLife.joinGame.postMessage(uid);
         },
-        gamePrepare:function(userId){
+        gamePrepare(uid) {
             console.log("gamePrepare()");
-            CFGameLife.gamePrepare.postMessage(userId);
+            CFGameLife.gamePrepare.postMessage(uid);
         },
-        cancelPrepare:function(userId){
+        cancelPrepare(uid) {
             console.log("cancelPrepare()");
-            CFGameLife.cancelPrepare.postMessage(userId);
+            CFGameLife.cancelPrepare.postMessage(uid);
         },
-        gameTerminated:function(userId){
+        gameTerminated(uid) {
             console.log("gameTerminated()");
-            CFGameLife.gameTerminated.postMessage(userId);
+            CFGameLife.gameTerminated.postMessage(uid);
         },
-        reportGameSeats:function(userIds){
-            console.log("call reportGameSeats()");
-            CFGameLife.reportGameSeats.postMessage(userIds);
-        },
-        saveResultPicture:function(data){
-            console.log("call saveResultPicture()");
-            CFGameLife.saveResultPicture.postMessage(data);
+        gameOver(uid) {
+            console.log("gameOver()");
+            CFGameLife.gameOver.postMessage(uid);
         }
-    },
+    }
 };
 
 function getInvokeId(){
