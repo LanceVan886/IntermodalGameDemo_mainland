@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -79,6 +80,43 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public CFGameSDK.CFRect onWindowSafeArea() {
                 return new CFGameSDK.CFRect(0, CFDensityUtil.dp2px(MainActivity.this, 200), 0, CFDensityUtil.dp2px(MainActivity.this, 280), 0.6f);
+            }
+        });
+
+        CFGameSDK.setCFGameLifecycle(new CFGameSDK.ICFGameLifecycle() {
+            @Override
+            public void onGameLoadFail() {
+
+            }
+
+            @Override
+            public boolean onPreJoinGame(String s, int i) {
+                return true;
+            }
+
+            @Override
+            public void onJoinGame(String s) {
+
+            }
+
+            @Override
+            public void onGamePrepare(String s) {
+
+            }
+
+            @Override
+            public void onCancelPrepare(String s) {
+
+            }
+
+            @Override
+            public void onGameTerminated(String s) {
+
+            }
+
+            @Override
+            public void onGameOver() {
+
             }
         });
     }
