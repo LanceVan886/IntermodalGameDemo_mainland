@@ -58,6 +58,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  refresh game userInfo
  */
 -(void)refreshUserInfo;
+
+-(CFGameWebviewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId;
+
 @end
 
 NS_ASSUME_NONNULL_END

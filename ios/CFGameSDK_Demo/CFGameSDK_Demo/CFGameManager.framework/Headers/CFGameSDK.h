@@ -18,6 +18,7 @@ typedef struct {
 } CFGameEdgeInsets;
 
 @class CFGameEngine;
+@class CFGameWebviewController;
 
 typedef void(^GetGameListSuccessBlk)(NSArray<CFGameModel *> *gameList);
 typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
@@ -218,6 +219,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  设置RTC回调
  */
 +(void)setRTCCallback:(id<CFGameSDKRTCDelegate>)callback;
+
+/*
+ *  获取CFGameWebViewController 用于自定义展示
+ */
++(CFGameWebviewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId;
 
 +(CFGameEngine *)getEngine;
 
