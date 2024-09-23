@@ -6,8 +6,8 @@
 //
 
 #import "ViewController.h"
-#import <CFGameManager/CFGameSDK.h>
-#import <CFGameManager/CFGameWebviewController.h>
+#import <CFGameSDK/CFGameSDK.h>
+#import <CFGameSDK/CFGameWebviewController.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *languageTF;
@@ -37,6 +37,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [CFGameSDK cfGameSDKLog:^(NSString * _Nonnull logMsg) {
+        NSLog(@"sdk log %@",logMsg);
+    }];
     
 }
 
@@ -87,8 +91,6 @@
     [CFGameSDK setCFGameLifecycleCallback:self];
     [CFGameSDK setRTCCallback:self];
     
-    ZKLogger *logger = [[ZKLogger alloc] init];
-    [CFGameSDK setLogger:logger];
 }
 
 - (IBAction)gameListAction:(id)sender {
