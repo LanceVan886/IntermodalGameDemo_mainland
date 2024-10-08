@@ -8,7 +8,6 @@
 
 #import <CFGameSDK/CFGameModel.h>
 #import <CFGameSDK/CFGameWebviewController.h>
-#import <CFGameSDK/CFGameEngine.h>
 
 typedef struct {
     CGFloat top;
@@ -156,7 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param appId : 创发提供的appId
  *  @param appKey : 创发提供的appKey
  */
-+(void)setUpSDKWithApplication:(UIApplication *)app appId:(NSInteger)appId language:(NSString *)language isProduct:(BOOL)isProduct;
++(void)setUpSDKWithApplication:(UIApplication *)app appId:(NSString *)appId language:(NSString *)language isProduct:(BOOL)isProduct;
 
 
 /*
@@ -264,9 +263,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  获取CFGameWebViewController 用于自定义展示
  */
 +(CFGameWebviewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId;
-
-
-+(CFGameEngine *)getEngine;
 
 
 /*

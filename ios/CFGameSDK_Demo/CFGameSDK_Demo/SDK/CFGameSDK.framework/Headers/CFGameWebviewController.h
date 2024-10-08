@@ -6,13 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CFGameSDK/ZKWebView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CFGameWebviewController : UIViewController
-
-@property (strong, nonatomic) ZKWebView *webView;
 
 @property (copy, nonatomic) NSString *webUrl;
 
