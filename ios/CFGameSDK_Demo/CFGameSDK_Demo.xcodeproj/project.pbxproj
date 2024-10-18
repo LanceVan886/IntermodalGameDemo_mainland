@@ -14,8 +14,8 @@
 		3661544B2C10670000B39751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3661544A2C10670000B39751 /* Assets.xcassets */; };
 		3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3661544C2C10670000B39751 /* LaunchScreen.storyboard */; };
 		366154512C10670000B39751 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154502C10670000B39751 /* main.m */; };
+		6494B0582CB4D766006BCD33 /* CFGameSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6494B0572CB4D766006BCD33 /* CFGameSDK.framework */; };
 		64E2773D2CA155CF00EEC7FE /* CFGameSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64E2773A2CA155CF00EEC7FE /* CFGameSDK.bundle */; };
-		64E2773E2CA155CF00EEC7FE /* CFGameSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E2773B2CA155CF00EEC7FE /* CFGameSDK.framework */; };
 		AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +46,8 @@
 		3661544F2C10670000B39751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366154502C10670000B39751 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41254E2BD683402E3D975C4F /* Pods-CFGameSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
+		6494B0572CB4D766006BCD33 /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CFGameSDK.framework; sourceTree = "<group>"; };
 		64E2773A2CA155CF00EEC7FE /* CFGameSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CFGameSDK.bundle; sourceTree = "<group>"; };
-		64E2773B2CA155CF00EEC7FE /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CFGameSDK.framework; sourceTree = "<group>"; };
 		B1EA32F470367D58A45B9DDD /* Pods-CFGameSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.debug.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AB1E4E2C106AE0006B456F /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFGameSDK.framework; path = CFGameSDK_Demo/CFGameSDK.framework; sourceTree = "<group>"; };
 		D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFGameSDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64E2773E2CA155CF00EEC7FE /* CFGameSDK.framework in Frameworks */,
+				6494B0582CB4D766006BCD33 /* CFGameSDK.framework in Frameworks */,
 				AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,8 +106,8 @@
 		64E2773C2CA155CF00EEC7FE /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				6494B0572CB4D766006BCD33 /* CFGameSDK.framework */,
 				64E2773A2CA155CF00EEC7FE /* CFGameSDK.bundle */,
-				64E2773B2CA155CF00EEC7FE /* CFGameSDK.framework */,
 			);
 			path = SDK;
 			sourceTree = "<group>";

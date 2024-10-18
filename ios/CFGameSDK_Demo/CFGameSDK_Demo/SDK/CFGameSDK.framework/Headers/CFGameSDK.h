@@ -259,6 +259,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(void)setRTCCallback:(id<CFGameSDKRTCDelegate>)callback;
 
+
 /*
  *  获取CFGameWebViewController 用于自定义展示
  */
