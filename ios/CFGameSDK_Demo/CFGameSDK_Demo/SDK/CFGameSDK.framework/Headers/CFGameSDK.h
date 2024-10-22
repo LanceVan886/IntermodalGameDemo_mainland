@@ -203,7 +203,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)finishGameWindow;
 
 /*
- *  释放当前游戏
+ *  强制结束游戏
  */
 +(void)terminateGame;
 
@@ -222,6 +222,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  开始游戏
  */
 +(void)gameStart;
+
+/*
+ *  退出游戏
+ */
++(void)quitGame;
+
 
 /**
     踢人

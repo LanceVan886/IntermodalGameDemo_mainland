@@ -6,10 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CFGameWebviewController : UIViewController
+@interface CFGameWebviewController : UIViewController 
 
 @property (copy, nonatomic) NSString *webUrl;
 
@@ -17,23 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (assign,nonatomic) BOOL isHalfScreen;
 
-
--(void)sentExtToGame:(NSString *)extStr;
-
-// 刷新用户信息
--(void)refreshUserInfo;
-
--(void)terminateGame;
-
--(void)joinGame:(int)position;
-
--(void)gameStartMethod;
-
--(void)gamePlayerRemoveMethedWithUid:(NSString *)uid;
-
--(void)gameBGMMusicSet:(BOOL)mode;
-
--(void)gameSoundSet:(BOOL)mode;
 
 @end
 

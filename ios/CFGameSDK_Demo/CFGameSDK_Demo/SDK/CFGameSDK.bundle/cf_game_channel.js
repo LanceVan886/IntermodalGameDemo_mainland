@@ -118,6 +118,10 @@ var cf_game={
         gameSoundSet(mode){
             console.log("gameSoundSet()");
             CFGameLife.gameSoundSet.postMessage(mode);
+        },
+        qiutGame(){
+            console.log("qiutGame()");
+            CFGameLife.qiutGame()
         }
         
         
