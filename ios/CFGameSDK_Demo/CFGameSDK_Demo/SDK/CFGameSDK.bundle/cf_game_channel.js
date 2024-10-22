@@ -1,12 +1,12 @@
 var cfgCallJsBacks={};
-var CFGameUser = window.webkit.messageHandlers;
+var CFGameRTC = window.webkit.messageHandlers;
 var CFGameOpenApi = window.webkit.messageHandlers;
 var CFGameLife = window.webkit.messageHandlers;
 
 var cf_game={
     GameRTC:{
             onCFGamePushSelfRTC: function (push, callback) {
-                console.log("gameLoadSuccess()");
+                console.log("game push self rtc()");
                 var invokeId = getInvokeId();
                 cfgCallJsBacks[invokeId] = callback;
                 var message = {
@@ -18,7 +18,7 @@ var cf_game={
                 CFGameRTC.onCFGamePushSelfRTC.postMessage(message);
             },
             onCFGamePullOtherRTC: function (uid, pull, callback) {
-                console.log("gameLoadFail()");
+                console.log("game pull other rtc()");
                 var invokeId = getInvokeId();
                 cfgCallJsBacks[invokeId] = callback;
                 var message = {
@@ -59,17 +59,11 @@ var cf_game={
             console.log("closeGamePage()");
             CFGameOpenApi.closeGamePage.postMessage(invokeId);
         }
-//        sentExt: function (ext) {
-//        var invokeId = getInvokeId();
-//        console.log("sentExt()");
-//        CFGameOpenApi.closeGamePage.postMessage(ext);
-//        }
 
     },
     GameLife:{
         getGameloadProgress: function (progress){
             console.log("getGameloadProgress()");
-//            var invokeId = getInvokeId();
             CFGameOpenApi.getGameloadProgress.postMessage(progress);
         },
         gameLoadFail() {
