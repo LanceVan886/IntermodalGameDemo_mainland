@@ -7,7 +7,7 @@
 
 
 #import <CFGameSDK/CFGameModel.h>
-#import <CFGameSDK/CFGameWebviewController.h>
+#import <UIKit/UIKit.h>
 
 typedef struct {
     CGFloat top;
@@ -18,8 +18,8 @@ typedef struct {
 } CFGameEdgeInsets;
 
 
-typedef void(^GetGameListSuccessBlk)(NSArray<CFGameModel *> *gameList);
-typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
+typedef void(^GetGameListSuccessBlk)(NSArray<CFGameModel *> * __nonnull gameList);
+typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
 
 @protocol CFGameSDKDelegate <NSObject>
 
@@ -35,7 +35,7 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
  *
  * Returns：当前用户所在的房间号，如果没有互动玩法可直接返回空字符串
  */
-- (NSString *)onGetCurrentRoomId;
+- (NSString *_Nullable)onGetCurrentRoomId;
 /**
  *
  * Returns：如果平台无需指定游戏管理员可直接返回false
@@ -63,12 +63,12 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
  *
  * 用户登录失败回调
  */
-- (void)onLoginFailCode:(int)code message:(NSString *)msg;
+- (void)onLoginFailCode:(int)code message:(NSString *__nonnull)msg;
 /**
  *
  * token 更新后回调，接入方通常无需关注此接口
  */
-- (void)onRefreshToken:(NSString *)token;
+- (void)onRefreshToken:(NSString *__nonnull)token;
 
 @end
 
@@ -90,32 +90,32 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
  *
  * 用户自动上麦加入游戏
  */
-- (BOOL)onPreJoinGame:(NSString *)uid seatIndex:(int)seatIndex;
+- (BOOL)onPreJoinGame:(NSString *_Nonnull)uid seatIndex:(int)seatIndex;
 
 /**
  *
  * 用户加入游戏
  */
-- (void)onJoinGame:(NSString *)uid;
+- (void)onJoinGame:(NSString *__nonnull)uid;
 
 /**
  *
  * 用户准备游戏
  */
-- (void)onGamePrepare:(NSString *)uid;
+- (void)onGamePrepare:(NSString *__nonnull)uid;
 
 /**
  *
  * 用户取消准备
  */
-- (void)onCancelPrepare:(NSString *)uid;
+- (void)onCancelPrepare:(NSString *__nonnull)uid;
 
 
 /**
  *
  * 用户游戏终结
  */
-- (void)onGameTerminated:(NSString *)uid;
+- (void)onGameTerminated:(NSString *__nonnull)uid;
 
 /**
  *
@@ -132,7 +132,7 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString *msg);
 
 - (BOOL)onCFGamePushSelfRTC:(BOOL)push;
 
-- (BOOL)onCFGamePullOtherRTC:(NSString *)uid pull:(BOOL)pull;
+- (BOOL)onCFGamePullOtherRTC:(NSString *__nonnull)uid pull:(BOOL)pull;
 
 @end
 
@@ -267,9 +267,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /*
- *  获取CFGameWebViewController 用于自定义展示
+ *  获取返回一个带有webview游戏页面的ViewController 用于自定义展示
  */
-+(CFGameWebviewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId;
++(UIViewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId;
 
 
 /*
