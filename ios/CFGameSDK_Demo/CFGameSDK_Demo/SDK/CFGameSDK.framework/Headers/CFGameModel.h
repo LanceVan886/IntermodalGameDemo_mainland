@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CFGameModel : NSObject
 
 // 游戏id
-@property (nonatomic,assign) int g_id;
+@property (nonatomic,assign) NSInteger g_id;
 // 游戏名称
 @property (nonatomic,copy) NSString *g_name;
 // 游戏icon
@@ -22,5 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @end
+
+
+
+
 
 NS_ASSUME_NONNULL_END
