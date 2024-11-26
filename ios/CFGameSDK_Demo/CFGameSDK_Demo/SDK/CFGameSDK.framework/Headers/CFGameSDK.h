@@ -130,8 +130,14 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
 @protocol CFGameSDKRTCDelegate <NSObject>
 @required
 
-- (BOOL)onCFGamePushSelfRTC:(BOOL)push;
 
+/**
+    推自己的流
+ */
+- (BOOL)onCFGamePushSelfRTC:(BOOL)push;
+/**
+    拉取uid的流
+ */
 - (BOOL)onCFGamePullOtherRTC:(NSString *__nonnull)uid pull:(BOOL)pull;
 
 @end
@@ -264,6 +270,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  设置RTC回调
  */
 +(void)setRTCCallback:(id<CFGameSDKRTCDelegate>)callback;
+
+
+
 
 
 /*
