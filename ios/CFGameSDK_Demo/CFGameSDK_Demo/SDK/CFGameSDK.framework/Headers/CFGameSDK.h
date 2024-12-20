@@ -47,6 +47,12 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  */
 - (CFGameEdgeInsets)onWindowSafeArea;
 
+/**
+ *  游戏预加载成功返回游戏id
+ */
+- (void)onPreLoadGameSuccess:(NSInteger)gid;
+
+
 @end
 
 
@@ -90,13 +96,8 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  *
  * 用户自动上麦加入游戏
  */
-- (BOOL)onPreJoinGame:(NSString *_Nonnull)uid seatIndex:(int)seatIndex;
+- (BOOL)onPreJoinGame:(NSString *_Nonnull)uid seatIndex:(NSInteger)seatIndex;
 
-/**
- *
- * 用户加入游戏
- */
-- (void)onJoinGame:(NSString *__nonnull)uid;
 
 /**
  *
@@ -110,12 +111,11 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  */
 - (void)onCancelPrepare:(NSString *__nonnull)uid;
 
-
 /**
  *
- * 用户游戏终结
+ * 用户点击用户头像
  */
-- (void)onGameTerminated:(NSString *__nonnull)uid;
+- (void)onSeatAvatarTouch:(NSString *__nonnull)uid seatIndex:(NSInteger)index;
 
 /**
  *
@@ -181,6 +181,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(void)getGameListWithSuccess:(GetGameListSuccessBlk)successBlk failure:(GetGameListFailureBlk)failBlk;
 
+
+/**
+    游戏预加载
+ */
++(void)preloadGameWithList:(NSArray<NSNumber *> *)arr;
+
+
+/**
+    游戏预加载加载取消
+ */
++(void)cancelPreloadGame;
+
 /*
  *  加载半屏游戏
  *  @param gameId : 游戏id
@@ -194,6 +206,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @url   url : 游戏url
  */
 +(void)loadFullWindowGame:(NSString *)gameId url:(NSString *)url;
+
+
+/*
+ *  获取返回一个带有webview游戏页面的ViewController 用于自定义展示
+ */
++(UIViewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId isHalf:(BOOL)isHalf;
+
+
+
 
 /*
     上报透传参数 extString : 透传参数 (传字符串类型，内容由平台自定义)
@@ -217,7 +238,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  加入当前游戏
  *  @param position : 位置
  */
-+(void)joinGame:(int)position;
++(void)joinGame:(NSInteger)position;
 
 /*
  *  通过js通知游戏刷新用户资产信息
@@ -255,6 +276,13 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)gameSoundSet:(BOOL)mode;
 
 /*
+*  设置玩家角色
+*  @param role 房主传 1 非房主0
+*/
++ (void)setPlayerRole:(NSInteger)role;
+
+
+/*
  *  设置接入方回调
  */
 +(void)setBizCallback:(id<CFGameSDKDelegate>)callback;
@@ -273,12 +301,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
-
-/*
- *  获取返回一个带有webview游戏页面的ViewController 用于自定义展示
- */
-+(UIViewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId;
 
 
 /*

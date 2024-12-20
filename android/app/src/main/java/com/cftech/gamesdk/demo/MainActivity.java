@@ -81,12 +81,17 @@ public class MainActivity extends AppCompatActivity {
             public CFGameSDK.CFRect onWindowSafeArea() {
                 return new CFGameSDK.CFRect(0, CFDensityUtil.dp2px(MainActivity.this, 200), 0, CFDensityUtil.dp2px(MainActivity.this, 280), 0.6f);
             }
+
+            @Override
+            public void onGamePageClose() {
+                Log.i("MainActivity", "game page close");
+            }
         });
 
         CFGameSDK.setCFGameLifecycle(new CFGameSDK.ICFGameLifecycle() {
             @Override
             public void onGameLoadFail() {
-
+                Log.i("MainActivity", "on Game Load Fail");
             }
 
             @Override
@@ -94,29 +99,31 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
-            @Override
-            public void onJoinGame(String s) {
 
-            }
 
             @Override
             public void onGamePrepare(String s) {
-
+                Log.i("MainActivity", "on Game Prepare uid:"+s);
             }
 
             @Override
             public void onCancelPrepare(String s) {
-
-            }
-
-            @Override
-            public void onGameTerminated(String s) {
-
+                Log.i("MainActivity", "on Cancel Prepare uid:"+s);
             }
 
             @Override
             public void onGameOver() {
+                Log.i("MainActivity", "on Game Over");
+            }
 
+            @Override
+            public void onGameDidFinishLoad() {
+                Log.i("MainActivity", "on Game Did Finish Load");
+            }
+
+            @Override
+            public void onSeatAvatarTouch(String s, int i) {
+                Log.i("MainActivity", "on Seat Avatar Touch uid:"+s+",seatIndex:"+i);
             }
         });
     }

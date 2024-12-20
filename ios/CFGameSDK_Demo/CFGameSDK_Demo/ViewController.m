@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import <CFGameSDK/CFGameSDK.h>
 
-@interface ViewController ()
+@interface ViewController () <CFGameSDKDelegate,CFGameSDKRTCDelegate,CFGameSDKLoginDelegate,CFGameLifeCycleDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *languageTF;
 @property (weak, nonatomic) IBOutlet UITextField *channelTF;
 @property (weak, nonatomic) IBOutlet UITextField *userIDTF;
@@ -83,7 +83,7 @@
     [self.view endEditing:YES];
 
     
-    [CFGameSDK setUpSDKWithApplication:UIApplication.sharedApplication appId:self.channelTF.text language:_languageTF.text isProduct:self.isProduct];
+    [CFGameSDK setUpSDKWithApplication:UIApplication.sharedApplication appId:self.channelTF.text language:_languageTF.text isProduct:true];
     
     [CFGameSDK setBizCallback:self];
     
@@ -213,14 +213,6 @@
     return YES;
 }
 
-/**
- *
- * 用户加入游戏
- */
-- (void)onJoinGame:(NSString *)uid{
-    NSLog(@"CFViewController callback  uid = %@, JoinGame ",uid);
-
-}
 
 /**
  *
@@ -241,13 +233,6 @@
 }
 
 
-/**
- *
- * 用户游戏终结
- */
-- (void)onGameTerminated:(NSString *)uid{
-    NSLog(@"CFViewController callback uid = %@, game terminated ",uid);
-}
 
 /**
  *
@@ -257,6 +242,11 @@
     NSLog(@"CFViewController callback game over ");
 }
 
+- (void)gameDidFinishLoad { 
+    
+}
+
+
 
 - (BOOL)onCFGamePushSelfRTC:(BOOL)push{
     return YES;
@@ -265,5 +255,10 @@
 - (BOOL)onCFGamePullOtherRTC:(NSString *)uid pull:(BOOL)pull{
     return YES;
 }
+
+
+
+
+
 
 @end
