@@ -36,16 +36,14 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  * Returns：当前用户所在的房间号，如果没有互动玩法可直接返回空字符串
  */
 - (NSString *_Nullable)onGetCurrentRoomId;
-
 /**
  *
  * Returns：如果平台无需指定游戏管理员可直接返回false
  */
 - (BOOL)onIsRoomOwner;
-
 /**
  *
- * Returns：游戏视图的安全区域，若无要求可返回空
+ * Returns：游戏视图的安全区域，若无要求可返回null
  */
 - (CFGameEdgeInsets)onWindowSafeArea;
 
