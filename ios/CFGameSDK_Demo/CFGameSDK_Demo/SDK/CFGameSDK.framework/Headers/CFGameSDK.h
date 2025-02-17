@@ -53,6 +53,11 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
 - (void)onPreLoadGameSuccess:(NSInteger)gid;
 
 
+/**
+    页面关闭回调
+ */
+- (void)onGamePageClose;
+
 @end
 
 
@@ -215,7 +220,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
 /*
     上报透传参数 extString : 透传参数 (传字符串类型，内容由平台自定义)
  
@@ -223,6 +227,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)sentExtToGame:(NSString *)extString;
 
+
+/**
+    是否显示关闭按钮
+ */
++(void)showCloseButton:(BOOL)isShow;
 
 /*
  *  销毁游戏窗口
@@ -298,8 +307,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  设置RTC回调
  */
 +(void)setRTCCallback:(id<CFGameSDKRTCDelegate>)callback;
-
-
 
 
 

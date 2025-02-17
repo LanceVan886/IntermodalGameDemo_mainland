@@ -64,11 +64,11 @@ var cf_game={
     GameLife:{
         getGameloadProgress: function (progress){
             console.log("getGameloadProgress()");
-            CFGameOpenApi.getGameloadProgress.postMessage(progress);
+            CFGameLife.getGameloadProgress.postMessage(progress);
         },
         gameLoadFail() {
             console.log("gameLoadFail()");
-            CFGameLife.gameLoadFail();
+            CFGameLife.gameLoadFail.postMessage();
         },
         preJoinGame(uid, seat, callback) {
             console.log("preJoinGame()");
@@ -117,7 +117,7 @@ var cf_game={
         },
         gameStart(){
             console.log("gameStart()");
-            CFGameLife.gameStart();
+            CFGameLife.gameStart.postMessage();
         },
         playerRemoveWithUid(uid){
             console.log("playerRemoveWithUid()");
@@ -131,13 +131,13 @@ var cf_game={
             console.log("gameSoundSet()");
             CFGameLife.gameSoundSet.postMessage(mode);
         },
-        qiutGame(){
-            console.log("qiutGame()");
-            CFGameLife.qiutGame();
+        quitGame(){
+            console.log("quitGame()");
+            CFGameLife.qiutGame.postMessage();
         },
         gameLoadOfflineProps() {
             console.log("gameLoadOfflineProps()");
-            CFGameLife.gameLoadOfflineProps();
+            CFGameLife.gameLoadOfflineProps.postMessage();
         },
         
         
