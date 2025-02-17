@@ -133,7 +133,7 @@ var cf_game={
         },
         quitGame(){
             console.log("quitGame()");
-            CFGameLife.qiutGame.postMessage();
+            CFGameLife.quitGame.postMessage();
         },
         gameLoadOfflineProps() {
             console.log("gameLoadOfflineProps()");
