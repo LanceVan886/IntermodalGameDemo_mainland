@@ -129,6 +129,12 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
 - (void)onGameOver;
 
 
+/**
+ *
+ *  购买结果回调
+ */
+- (void)onGamePurchaseResult:(int)code OrderId:(NSString *__nonnull)orderId;
+
 @end
 
 
