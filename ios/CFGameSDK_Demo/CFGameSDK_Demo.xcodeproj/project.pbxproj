@@ -14,8 +14,9 @@
 		3661544B2C10670000B39751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3661544A2C10670000B39751 /* Assets.xcassets */; };
 		3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3661544C2C10670000B39751 /* LaunchScreen.storyboard */; };
 		366154512C10670000B39751 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 366154502C10670000B39751 /* main.m */; };
-		6494B0582CB4D766006BCD33 /* CFGameSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6494B0572CB4D766006BCD33 /* CFGameSDK.framework */; };
-		64E2773D2CA155CF00EEC7FE /* CFGameSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64E2773A2CA155CF00EEC7FE /* CFGameSDK.bundle */; };
+		645C566A2D5F450F008B8357 /* CFGameSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 645C56672D5F450F008B8357 /* CFGameSDK.bundle */; };
+		64D20BB92D93E35B0089353A /* CFGameSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645C56682D5F450F008B8357 /* CFGameSDK.framework */; };
+		64D20BBA2D93E35B0089353A /* CFGameSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 645C56682D5F450F008B8357 /* CFGameSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				64D20BBA2D93E35B0089353A /* CFGameSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,8 +48,9 @@
 		3661544F2C10670000B39751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366154502C10670000B39751 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41254E2BD683402E3D975C4F /* Pods-CFGameSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
-		6494B0572CB4D766006BCD33 /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CFGameSDK.framework; sourceTree = "<group>"; };
-		64E2773A2CA155CF00EEC7FE /* CFGameSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CFGameSDK.bundle; sourceTree = "<group>"; };
+		645C56672D5F450F008B8357 /* CFGameSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CFGameSDK.bundle; sourceTree = "<group>"; };
+		645C56682D5F450F008B8357 /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CFGameSDK.framework; sourceTree = "<group>"; };
+		645EA1682D3923EC00FD90C0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		B1EA32F470367D58A45B9DDD /* Pods-CFGameSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CFGameSDK_Demo.debug.xcconfig"; path = "Target Support Files/Pods-CFGameSDK_Demo/Pods-CFGameSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AB1E4E2C106AE0006B456F /* CFGameSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFGameSDK.framework; path = CFGameSDK_Demo/CFGameSDK.framework; sourceTree = "<group>"; };
 		D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CFGameSDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,8 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6494B0582CB4D766006BCD33 /* CFGameSDK.framework in Frameworks */,
 				AF6F64F90528DB1B33DC82DB /* Pods_CFGameSDK_Demo.framework in Frameworks */,
+				64D20BB92D93E35B0089353A /* CFGameSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +90,7 @@
 		3661543D2C1066FF00B39751 /* CFGameSDK_Demo */ = {
 			isa = PBXGroup;
 			children = (
-				64E2773C2CA155CF00EEC7FE /* SDK */,
+				645C56692D5F450F008B8357 /* SDK */,
 				3661543E2C1066FF00B39751 /* AppDelegate.h */,
 				3661543F2C1066FF00B39751 /* AppDelegate.m */,
 				366154412C1066FF00B39751 /* SceneDelegate.h */,
@@ -103,11 +106,11 @@
 			path = CFGameSDK_Demo;
 			sourceTree = "<group>";
 		};
-		64E2773C2CA155CF00EEC7FE /* SDK */ = {
+		645C56692D5F450F008B8357 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				6494B0572CB4D766006BCD33 /* CFGameSDK.framework */,
-				64E2773A2CA155CF00EEC7FE /* CFGameSDK.bundle */,
+				645C56672D5F450F008B8357 /* CFGameSDK.bundle */,
+				645C56682D5F450F008B8357 /* CFGameSDK.framework */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -115,6 +118,7 @@
 		B186B125F8C95F7DA391AB57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				645EA1682D3923EC00FD90C0 /* libiconv.tbd */,
 				D64399040D41FC8F12864B01 /* Pods_CFGameSDK_Demo.framework */,
 				B7AB1E4E2C106AE0006B456F /* CFGameSDK.framework */,
 			);
@@ -191,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3661544E2C10670000B39751 /* LaunchScreen.storyboard in Resources */,
-				64E2773D2CA155CF00EEC7FE /* CFGameSDK.bundle in Resources */,
+				645C566A2D5F450F008B8357 /* CFGameSDK.bundle in Resources */,
 				3661544B2C10670000B39751 /* Assets.xcassets in Resources */,
 				366154492C1066FF00B39751 /* Main.storyboard in Resources */,
 			);
@@ -398,9 +402,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 492N7J69NZ;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HCH2CJ77N;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,16 +442,15 @@
 					"-framework",
 					"\"SDWebImage\"",
 					"-framework",
-					"\"SSZipArchive\"",
-					"-framework",
 					"\"UIKit\"",
 					"-framework",
 					"\"YYModel\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.CFGameSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XLLUK.SDKApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = LUK_SDKapp_Dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -461,9 +466,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 492N7J69NZ;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9HCH2CJ77N;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,16 +506,15 @@
 					"-framework",
 					"\"SDWebImage\"",
 					"-framework",
-					"\"SSZipArchive\"",
-					"-framework",
 					"\"UIKit\"",
 					"-framework",
 					"\"YYModel\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.CFGameSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.XLLUK.SDKApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = LUK_SDKapp_Dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

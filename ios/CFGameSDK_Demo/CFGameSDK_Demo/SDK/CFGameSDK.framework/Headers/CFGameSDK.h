@@ -172,7 +172,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param appId : 创发提供的appId
  *  @param appKey : 创发提供的appKey
  */
-+(void)setUpSDKWithApplication:(UIApplication *)app appId:(NSString *)appId language:(NSString *)language isProduct:(BOOL)isProduct;
++(void)setUpSDKWithApplication:(UIApplication *)app appId:(NSString *)appId language:(NSString *)language area:(NSString *)area isProduct:(BOOL)isProduct;
 
 
 /*

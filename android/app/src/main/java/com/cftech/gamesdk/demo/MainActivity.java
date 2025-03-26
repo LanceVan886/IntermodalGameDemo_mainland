@@ -125,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
             public void onSeatAvatarTouch(String s, int i) {
                 Log.i("MainActivity", "on Seat Avatar Touch uid:"+s+",seatIndex:"+i);
             }
+
+            @Override
+            public void onGamePurchaseResult(int i, String s) {
+
+            }
         });
     }
 }
