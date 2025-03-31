@@ -298,6 +298,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /*
+*  设置游戏语言
+*  @param role 房主传 1 非房主0
+*/
++ (void)setLanguage:(NSString *)language;
+
+
+/*
  *  设置接入方回调
  */
 +(void)setBizCallback:(id<CFGameSDKDelegate>)callback;
