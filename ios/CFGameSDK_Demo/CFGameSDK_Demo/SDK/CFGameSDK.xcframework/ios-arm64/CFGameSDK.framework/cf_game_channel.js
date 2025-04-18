@@ -6,7 +6,7 @@ var CFGameLife = window.webkit.messageHandlers;
 var cf_game={
     GameRTC:{
             onCFGamePushSelfRTC: function (push, callback) {
-                console.log("game push self rtc()");
+                console.log("sdk game push self rtc");
                 var invokeId = getInvokeId();
                 cfgCallJsBacks[invokeId] = callback;
                 var message = {
@@ -18,7 +18,7 @@ var cf_game={
                 CFGameRTC.onCFGamePushSelfRTC.postMessage(message);
             },
             onCFGamePullOtherRTC: function (uid, pull, callback) {
-                console.log("game pull other rtc()");
+                console.log("sdk game pull other rtc");
                 var invokeId = getInvokeId();
                 cfgCallJsBacks[invokeId] = callback;
                 var message = {
@@ -33,16 +33,15 @@ var cf_game={
     },
     OpenApi:{
         getBaseInfo: function (callback) {
-                    console.log("getBaseInfo()");
+                    console.log("sdk getBaseInfo");
                     console.log(window.webkit.messageHandlers);
-
                     var invokeId = getInvokeId();
                     cfgCallJsBacks[invokeId] = callback;
                     CFGameOpenApi.getBaseInfo.postMessage(invokeId);
         },
         
         getWindowSafeArea: function (callback) {
-                       console.log("getWindowSafeArea()");
+                       console.log("sdk getWindowSafeArea");
                        var invokeId = getInvokeId();
                        cfgCallJsBacks[invokeId] = callback;
                        CFGameOpenApi.getWindowSafeArea.postMessage(invokeId);
@@ -50,28 +49,32 @@ var cf_game={
             
         openChargePage: function () {
             var invokeId = getInvokeId();
-            console.log("openChargePage()");
+            console.log("sdk openChargePage");
             CFGameOpenApi.openChargePage.postMessage(invokeId);
         },
 
         closeGamePage: function () {
             var invokeId = getInvokeId();
-            console.log("closeGamePage()");
+            console.log("sdk closeGamePage");
             CFGameOpenApi.closeGamePage.postMessage(invokeId);
         }
 
     },
     GameLife:{
         getGameloadProgress: function (progress){
-            console.log("getGameloadProgress()");
+            console.log("sdk getGameloadProgress");
             CFGameLife.getGameloadProgress.postMessage(progress);
         },
         gameLoadFail() {
-            console.log("gameLoadFail()");
+            console.log("sdk gameLoadFail");
             CFGameLife.gameLoadFail.postMessage("success");
         },
+        gameLoadSuccess() {
+            console.log("sdk gameLoadSuccess");
+            CFGameLife.gameLoadSuccess.postMessage("success");
+        },
         preJoinGame(uid, seat, callback) {
-            console.log("preJoinGame()");
+            console.log("sdk preJoinGame");
             var invokeId = getInvokeId();
             cfgCallJsBacks[invokeId] = callback;
             var message = {
@@ -84,7 +87,7 @@ var cf_game={
             CFGameLife.preJoinGame.postMessage(message);
         },
         onSeatAvatarTouch(userid, seat) {
-            console.log("onSeatAvatarTouch()");
+            console.log("sdk onSeatAvatarTouch");
             var invokeId = getInvokeId();
             var message = {
                 invokeId:invokeId,
@@ -96,47 +99,47 @@ var cf_game={
             CFGameLife.onSeatAvatarTouch.postMessage(message);
         },
         joinGame(uid) {
-            console.log("joinGame()");
+            console.log("sdk joinGame");
             CFGameLife.joinGame.postMessage(uid);
         },
         gamePrepare(uid) {
-            console.log("gamePrepare()");
+            console.log("sdk gamePrepare");
             CFGameLife.gamePrepare.postMessage(uid);
         },
         cancelPrepare(uid) {
-            console.log("cancelPrepare()");
+            console.log("sdk cancelPrepare");
             CFGameLife.cancelPrepare.postMessage(uid);
         },
         gameTerminated(uid) {
-            console.log("gameTerminated()");
+            console.log("sdk gameTerminated");
             CFGameLife.gameTerminated.postMessage(uid);
         },
         gameOver(uid) {
-            console.log("gameOver()");
+            console.log("sdk gameOver");
             CFGameLife.gameOver.postMessage(uid);
         },
         gameStart(){
-            console.log("gameStart()");
+            console.log("sdk gameStart");
             CFGameLife.gameStart.postMessage("success");
         },
         playerRemoveWithUid(uid){
-            console.log("playerRemoveWithUid()");
+            console.log("sdk playerRemoveWithUid");
             CFGameLife.playerRemoveWithUid.postMessage(uid);
         },
         gameBackgroundMusicSet(mode){
-            console.log("gameBackgroundMusicSet()");
+            console.log("sdk gameBackgroundMusicSet");
             CFGameLife.gameBackgroundMusicSet.postMessage(mode);
         },
         gameSoundSet(mode){
-            console.log("gameSoundSet()");
+            console.log("sdk gameSoundSet");
             CFGameLife.gameSoundSet.postMessage(mode);
         },
         quitGame(){
-            console.log("quitGame()");
+            console.log("sdk quitGame");
             CFGameLife.quitGame.postMessage("success");
         },
         gameLoadOfflineProps() {
-            console.log("gameLoadOfflineProps()");
+            console.log("sdk gameLoadOfflineProps");
             CFGameLife.gameLoadOfflineProps.postMessage("success");
         },
         onGamePurchaseResult(code, orderId) {
@@ -149,7 +152,54 @@ var cf_game={
             };
             
             CFGameLife.onGamePurchaseResult.postMessage(message);
-        }
+        },
+        onGameMusicStartPlay(musicId,musicUrl,isLoop){
+            console.log("sdk onGameMusicStartPlay");
+            var message = {
+                data:{
+                    musicId:musicId,
+                    musicUrl:musicUrl,
+                    isLoop:isLoop
+                }
+            };
+            
+            CFGameLife.onGameMusicStartPlay.postMessage(message);
+        },
+        onGameMusicStopPlay(musicId){
+            console.log("sdk onGameMusicStopPlay");
+            CFGameLife.onGameMusicStopPlay.postMessage(musicId);
+            
+        },
+        onGameEffectSoundStartPlay(soundId,soundUrl,isLoop){
+            console.log("sdk onGameEffectSoundStartPlay");
+            var message = {
+                data:{
+                    soundId:soundId,
+                    soundUrl:soundUrl,
+                    isLoop:isLoop
+                }
+            };
+            
+            CFGameLife.onGameEffectSoundStartPlay.postMessage(message);
+        },
+        onGameEffectSoundStopPlay(soundId){
+            console.log("sdk onGameEffectSoundStopPlay");
+            CFGameLife.onGameEffectSoundStopPlay.postMessage(soundId);
+        },
+        appCallGame(dataStr){
+            console.log("sdk appCallGame");
+            CFGameLife.appCallGame.postMessage(dataStr);
+        },
+        gameStateChange(data){
+            console.log("sdk gameStateChange");
+            CFGameLife.gameStateChange.postMessage(data);
+        },
+        playerStateChange(data){
+            console.log("sdk playerStateChange");
+            CFGameLife.playerStateChange.postMessage(data);
+        },
+        
+
     }
 };
 

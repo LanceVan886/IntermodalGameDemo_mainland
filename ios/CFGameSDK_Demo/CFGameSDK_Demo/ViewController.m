@@ -168,6 +168,10 @@
     
 }
 
+- (void)onGamePageClose{
+    
+    [CFGameSDK finishGameWindow];
+}
 
 /**
  *

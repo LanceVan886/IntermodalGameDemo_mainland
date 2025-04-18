@@ -9,6 +9,6 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        CFGameSDK.initSDK(this, 1013140,  "zh_CN", true);
+        CFGameSDK.initSDK(this, 1013140,  "zh_CN","cn", true);
     }
 }

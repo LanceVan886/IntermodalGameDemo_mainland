@@ -8,6 +8,7 @@
 
 #import <CFGameSDK/CFGameModel.h>
 #import <UIKit/UIKit.h>
+#import <CFGameSDK/CFGameSDKStateDefines.h>
 
 typedef struct {
     CGFloat top;
@@ -17,19 +18,21 @@ typedef struct {
     CGFloat minScaleLimit;
 } CFGameEdgeInsets;
 
+typedef enum : NSUInteger {
+    GameDownloadingComplete = 1,
+    GameAlreadyExist = 2,
+} GameState;
+
 
 typedef void(^GetGameListSuccessBlk)(NSArray<CFGameModel *> * __nonnull gameList);
 typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
+
 
 @protocol CFGameSDKDelegate <NSObject>
 
 @required
 
-/**
- *
- * sdk回调渠道方，拉起渠道方的充值页面
- */
-- (void)openChargePage;
+
 
 /**
  *
@@ -47,21 +50,34 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  */
 - (CFGameEdgeInsets)onWindowSafeArea;
 
-/**
- *  游戏预加载成功返回游戏id
- */
-- (void)onPreLoadGameSuccess:(NSInteger)gid;
-
+@optional
 
 /**
     页面关闭回调
  */
 - (void)onGamePageClose;
 
+/**
+ *
+ * sdk回调渠道方，拉起渠道方的充值页面
+ */
+- (void)openChargePage;
+
+/**
+ *  游戏预加载成功返回游戏id
+ */
+- (void)onPreLoadGameSuccess:(NSInteger)gid gameState:(GameState)state;
+
+/**
+    设置统计上报回调
+ */
+- (void)reportStatsEvent:(NSString *_Nullable)event Code:(long)code Msg:(NSString *_Nullable)msg;
+
 @end
 
 
 @protocol CFGameSDKLoginDelegate <NSObject>
+
 @required
 
 /**
@@ -75,6 +91,10 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  * 用户登录失败回调
  */
 - (void)onLoginFailCode:(int)code message:(NSString *__nonnull)msg;
+
+
+@optional
+
 /**
  *
  * token 更新后回调，接入方通常无需关注此接口
@@ -122,6 +142,37 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  */
 - (void)onSeatAvatarTouch:(NSString *__nonnull)uid seatIndex:(NSInteger)index;
 
+
+/**
+ *
+ *  购买结果回调
+ */
+- (void)onGamePurchaseResult:(int)code OrderId:(NSString *__nonnull)orderId;
+
+
+/**
+ *
+ *   音乐播放回调
+ */
+- (int)onGameMusicStartPlay:(int)musicId musicUrl:(NSString *__nonnull)musicUrl isLoop:(BOOL)isLoop;
+/**
+ *
+ *   音乐停止播放回调
+ */
+- (int)onGameMusicStopPlay:(int)musicId;
+/**
+ *
+ *   音效播放回调
+ */
+- (int)onGameEffectSoundStartPlay:(int)soundId soundUrl:(NSString *__nonnull)soundUrl isLoop:(BOOL)isLoop;
+/**
+ *
+ *   音乐停止播放回调
+ */
+- (int)onGameEffectSoundStopPlay:(int)effectId;
+
+
+
 /**
  *
  * 游戏结束
@@ -130,10 +181,20 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
 
 
 /**
- *
- *  购买结果回调
+ * 游戏状态变化
+ * @param state     状态码
+ * @param dataJson  参数
  */
-- (void)onGamePurchaseResult:(int)code OrderId:(NSString *__nonnull)orderId;
+-(void)onGameStateChangeState:(NSString *_Nonnull)state dataJson:(NSString *_Nullable)dataJson;
+
+
+/**
+ * 游戏玩家状态变化
+ * @param userId   用户id
+ * @param state    状态码
+ * @param dataJson 参数
+ */
+-(void)onPlayerStateChangeState:(NSString *_Nonnull)uid state:(NSString*_Nonnull)state dataJson:(NSString*_Nullable)dataJson;
 
 @end
 
@@ -152,6 +213,7 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
 - (BOOL)onCFGamePullOtherRTC:(NSString *__nonnull)uid pull:(BOOL)pull;
 
 @end
+
 
 
 
@@ -202,7 +264,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
     游戏预加载加载取消
  */
-+(void)cancelPreloadGame;
++(void)cancelPreloadGame:(NSArray<NSNumber *> *)arr;
 
 /*
  *  加载半屏游戏
@@ -222,7 +284,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  *  获取返回一个带有webview游戏页面的ViewController 用于自定义展示
  */
-+(UIViewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId isHalf:(BOOL)isHalf;
++(UIViewController *)createGameWebViewWithUrl:(NSString *)gameUrl gameId:(int)gameId size:(CGSize)size;
+
 
 
 
@@ -233,11 +296,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)sentExtToGame:(NSString *)extString;
 
-
 /**
     是否显示关闭按钮
  */
 +(void)showCloseButton:(BOOL)isShow;
+
+
 
 /*
  *  销毁游戏窗口
@@ -271,6 +335,12 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)quitGame;
 
 
+
+/*
+ *  设置游戏声音文件路径
+ */
++ (void)setGameVoicePath:(NSString *)path;
+
 /**
     踢人
  @param uid 用户id
@@ -297,11 +367,40 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setPlayerRole:(NSInteger)role;
 
 
-/*
-*  设置游戏语言
-*  @param role 房主传 1 非房主0
-*/
+/**
+    获取日志路径
+ */
++ (NSString *)getLogFilePath;
+
+
+/**
+    语言设置
+ */
 + (void)setLanguage:(NSString *)language;
+
+/**
+    暂停游戏
+ */
++ (void)gamePause;
+
+/**
+    继续游戏，用于结束暂停游戏状态
+ */
++ (void)gamePlay;
+
+/**
+    重新加载游戏
+ */
++ (void)gameReload;
+
+
+
+/**
+    APP 发送命令到游戏端
+ */
+
++ (void)appNotifyStateChange:(const NSString *)state dataJson:(NSString *)dataJson;
+
 
 
 /*

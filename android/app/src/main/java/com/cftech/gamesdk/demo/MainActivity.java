@@ -127,8 +127,38 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
+            public void onGameStateChangeState(String s, String s1) {
+
+            }
+
+            @Override
+            public void onPlayerStateChangeState(String s, String s1, String s2) {
+
+            }
+
+            @Override
             public void onGamePurchaseResult(int i, String s) {
 
+            }
+
+            @Override
+            public int onGameMusicStartPlay(int i, String s, Boolean aBoolean) {
+                return 0;
+            }
+
+            @Override
+            public int onGameMusicStopPlay(int i) {
+                return 0;
+            }
+
+            @Override
+            public int onGameEffectSoundStartPlay(int i, String s, Boolean aBoolean) {
+                return 0;
+            }
+
+            @Override
+            public int onGameEffectSoundStopPlay(int i) {
+                return 0;
             }
         });
     }
