@@ -198,7 +198,10 @@ var cf_game={
             console.log("sdk playerStateChange");
             CFGameLife.playerStateChange.postMessage(data);
         },
-        
+        gameSendScreenshot(data){
+            console.log("sdk gameSendScreenshot")
+            CFGameLife.gameSendScreenshot.postMessage(data)
+        }
 
     }
 };
