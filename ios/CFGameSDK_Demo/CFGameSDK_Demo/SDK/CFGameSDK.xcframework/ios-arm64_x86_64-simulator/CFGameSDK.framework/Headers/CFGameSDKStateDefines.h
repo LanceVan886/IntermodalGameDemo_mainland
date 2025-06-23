@@ -61,6 +61,8 @@ static NSString *cf_game_call_game_click_game_settle_again_btn = @"cf_game_call_
 static NSString *cf_game_call_game_disconnect = @"cf_game_call_game_disconnect";
 //  帮助按钮点击状态
 static NSString *cf_game_call_game_click_help_btn = @"cf_game_call_game_click_help_btn";
+//  游戏加载进度上报
+static NSString *cf_game_call_game_load_progress = @"cf_game_call_game_load_progress";
 
 
 #pragma mark - 玩家状态上报
