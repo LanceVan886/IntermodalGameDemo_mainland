@@ -201,7 +201,7 @@ typedef void(^GetGameListFailureBlk)(int code ,NSString * __nonnull msg);
  *
  *     游戏截图回调接口
  **/
-- (void)onGameScreenShotBaseData:(NSString *_Nullable)base64String;
+- (void)onGameScreenShotBaseData:(NSString *_Nullable)base64String dataJson:(NSString *_Nullable)dataJson;
 
 
 @end
