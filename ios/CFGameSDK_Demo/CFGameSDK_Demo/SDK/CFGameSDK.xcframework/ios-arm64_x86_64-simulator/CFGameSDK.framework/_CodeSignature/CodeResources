@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/CFGameSDKStateDefines.h</key>
 		<data>
-		tUlRkFh9dRtj6TLyH7B6XbyEXfQ=
+		lppqdJct1Ug2fpk4ipc2iOVvRcw=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>cf_game_channel.js</key>
 		<data>
-		/K68xSv9bQHSXDyWMOcj48n+F4I=
+		+7ncVF38lmbVy49zqq8JC6x8xtU=
 		</data>
 		<key>cfsdk_default_ic.png</key>
 		<data>
@@ -56,6 +56,14 @@
 		<data>
 		eidSdzooDTAwnwJU8mPrI8hdr44=
 		</data>
+		<key>cfsdk_loading_anim.png</key>
+		<data>
+		COT4/7HXfjCmJzO+uD2C86VKenk=
+		</data>
+		<key>cfsdk_loading_bg.png</key>
+		<data>
+		cwpLsd+egSnt+xoIjAu7jeRj5wU=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -77,7 +85,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MVUfDF4f+qNuMuM3rqfQFH55GciA1F4NuCAcOkYJr5s=
+			AEjcfKRBVmOdplRckJD5Pit9MSQkisuGuEGo9oC9jQI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -98,7 +106,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nGR2MBwEuTqAaji4un0bpZS8NOfqSxFEiA2nk/YRCf0=
+			10N1cXLovJSKIZ4vFg/b7PD4xyo3fJQHhduuYmXbgT4=
 			</data>
 		</dict>
 		<key>cfsdk_default_ic.png</key>
@@ -141,6 +149,20 @@
 			<key>hash2</key>
 			<data>
 			c6qGO5mg1Kk7rSxippBk1ZRRpkWD7HG6X0Mih1Eyres=
+			</data>
+		</dict>
+		<key>cfsdk_loading_anim.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			U517GrfMHOKH9wgbwdxOwfFSSZAGz/NGEBA8pzmKr+c=
+			</data>
+		</dict>
+		<key>cfsdk_loading_bg.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4IjfpdIwqB/sVv4Nb3KhA7wwv/6GpRtxCf8JPhXkx8c=
 			</data>
 		</dict>
 	</dict>

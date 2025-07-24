@@ -203,10 +203,10 @@ var cf_game={
             var message = {
                 data:{
                     imageData:imageData,
-                    dataJson:dataJson
+                    dataJson:dataJson,
                 }
             };
-            CFGameLife.gameSendScreenshot.postMessage(message)
+            CFGameLife.gameSendScreenshot.postMessage(message);
         }
 
     }
