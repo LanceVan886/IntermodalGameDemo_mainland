@@ -50,7 +50,7 @@ var cf_game={
         openChargePage: function () {
             var invokeId = getInvokeId();
             console.log("sdk openChargePage");
-            CFGameOpenApi.openChargePage.postMessage(invokeId);
+            CFGameOpenApi.openChargePage.postMeERRssage(invokeId);
         },
 
         closeGamePage: function () {
@@ -62,7 +62,7 @@ var cf_game={
     },
     GameLife:{
         getGameloadProgress: function (progress){
-            console.log("sdk getGameloadProgress");
+//            console.log("sdk getGameloadProgress");
             CFGameLife.getGameloadProgress.postMessage(progress);
         },
         gameLoadFail() {
