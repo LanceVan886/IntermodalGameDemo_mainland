@@ -50,7 +50,7 @@ var cf_game={
         openChargePage: function () {
             var invokeId = getInvokeId();
             console.log("sdk openChargePage");
-            CFGameOpenApi.openChargePage.postMeERRssage(invokeId);
+            CFGameOpenApi.openChargePage.postMessage(invokeId);
         },
         openPlatformPage: function (path,dataStr) {
             console.log("sdk openPlatformPage");
