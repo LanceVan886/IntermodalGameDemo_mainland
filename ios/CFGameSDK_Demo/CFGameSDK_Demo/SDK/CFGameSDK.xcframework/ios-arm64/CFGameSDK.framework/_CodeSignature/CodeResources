@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/CFGameModel.h</key>
 		<data>
-		j8Ot1vBFdijUS/n6M/qZpVRiMB8=
+		jZwV7IQ4Tpr1xofl4aJJRgQ9d4Y=
 		</data>
 		<key>Headers/CFGameSDK.h</key>
 		<data>
-		TeAIGY+ct3+LHIvfIinC1KbxmDs=
+		7f9BABdomxnY1MMMiqEMrLW+7lk=
 		</data>
 		<key>Headers/CFGameSDKStateDefines.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>cf_game_channel.js</key>
 		<data>
-		Fp6JSgacoq8xVLE0ZyiWLqh/xfA=
+		0tiMwbCxcbfkNKDJqPtr88m47Dg=
 		</data>
 		<key>cfsdk_default_ic.png</key>
 		<data>
@@ -71,14 +71,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Ab9Hnp02M2NgoCzn7asDRyZA7wZsBsZH2de+R8z1XE=
+			f9WgxGzgcHTy6p1QW6xK8A9H4pPHJsi/txgIrUovZhY=
 			</data>
 		</dict>
 		<key>Headers/CFGameSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LcMmtX0NxquAcrBcnFBmIcuJVETGjPkg3nfna0oUWM8=
+			YO7TlWBzcmNvBbyua0oVLJBN3C+yN9tJluFuBGVe6P4=
 			</data>
 		</dict>
 		<key>Headers/CFGameSDKStateDefines.h</key>
@@ -106,7 +106,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TW02/cJ9dV+0jt/6TWzXsJaVTAbrX0ftDQDHbeDIZYE=
+			u0kr5F00uusRowqC/dq0f0SK1IB7lg3dTAQRpAlx9Fg=
 			</data>
 		</dict>
 		<key>cfsdk_default_ic.png</key>
