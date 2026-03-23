@@ -142,6 +142,11 @@ typedef void(^GetGameAudioList)(NSArray * _Nullable audioList);
  */
 - (BOOL)onPreJoinGame:(NSString *_Nonnull)uid seatIndex:(NSInteger)seatIndex;
 
+/**
+ *
+ *  用户是否允许开始游戏
+ */
+- (BOOL)onCanStartGame:(NSString *_Nonnull)uid;
 
 /**
  *
