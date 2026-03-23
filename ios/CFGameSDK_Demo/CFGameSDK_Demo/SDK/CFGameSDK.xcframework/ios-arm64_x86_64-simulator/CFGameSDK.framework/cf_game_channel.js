@@ -92,6 +92,18 @@ var cf_game={
             };
             CFGameLife.preJoinGame.postMessage(message);
         },
+        canStartGame(uid, callback) {
+            console.log("sdk canStartGame");
+            var invokeId = getInvokeId();
+            cfgCallJsBacks[invokeId] = callback;
+            var message = {
+                invokeId:invokeId,
+                data:{
+                    uid:uid,
+                }
+            };
+            CFGameLife.canStartGame.postMessage(message);
+        },
         onSeatAvatarTouch(userid, seat) {
             console.log("sdk onSeatAvatarTouch");
             var invokeId = getInvokeId();
